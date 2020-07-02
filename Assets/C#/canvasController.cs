@@ -29,12 +29,13 @@ public class canvasController : MonoBehaviour
 
     void Awake()
     {
+        image.GetComponent<Image>().sprite = Resources.Load<Sprite>("white");
         //image = GetComponent<Image>();
         move.SetActive(false);
         attack.SetActive(false);
         skill.SetActive(false);
         item.SetActive(false);
-        //image.SetActive(false);
+        image.enabled = false;
         end.SetActive(false);
     }
 
@@ -44,7 +45,7 @@ public class canvasController : MonoBehaviour
         attack.SetActive(true);
         skill.SetActive(true);
         item.SetActive(true);
-        //image.SetActive(true);
+        image.enabled = true;
         end.SetActive(true);
         //Debug.Log(Resources.Load<Sprite>(characterOrder.characters[0].image));
         image.GetComponent<Image>().sprite = Resources.Load<Sprite>(characterOrder.characters[0].image);
@@ -89,5 +90,11 @@ public class canvasController : MonoBehaviour
         Character Obj1 = characterOrder.characters[0];
         Obj1.clearDisplay();
         characterOrder.orderChange();
+        move.SetActive(false);
+        attack.SetActive(false);
+        skill.SetActive(false);
+        item.SetActive(false);
+        image.enabled = false;
+        end.SetActive(false);
     }
 }

@@ -30,7 +30,7 @@ public class CharacterOrder : MonoBehaviour
         {
             characters[i].actionValue = characters[i].actionValue - value;
             Debug.Log(characters[i].actionValue);
-        }
+        } 
     }
 
     // Update is called once per frame
