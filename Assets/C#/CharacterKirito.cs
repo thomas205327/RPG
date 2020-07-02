@@ -11,9 +11,15 @@ public class CharacterKirito : Character
         pos = move;
         moveDis = 30;
         hp = 100;
+        hpMax = 100;
+        sp = 50;
+        spMax = 50;
         speed = 0;
         actionValue = 50;
+        actionValueMax = 50;
         attackDis = 10;
+        characterName = "桐人";
+        image = "Sword Art Online II - 20[01-32-37]";
     }
 
     // Start is called before the first frame update

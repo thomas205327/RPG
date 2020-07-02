@@ -9,9 +9,15 @@ public abstract class Character : MonoBehaviour
     public Vector3 pos;
     public int moveDis;
     public int hp;
+    public int hpMax;
+    public int sp;
+    public int spMax;
     public float speed;
     public int actionValue;
+    public int actionValueMax;
     public int attackDis;
+    public string characterName;
+    public string image;
 
     public virtual void moveDisplay(float dis){
         clearDisplay();

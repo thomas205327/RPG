@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Character;
+
 
 public class CharacterOrder : MonoBehaviour
 {
@@ -18,7 +18,19 @@ public class CharacterOrder : MonoBehaviour
     {
         characters.Add(GameObject.Find("Kirito(Clone)").GetComponent<Character>());
         characters.Add(GameObject.Find("Fuze(Clone)").GetComponent<Character>());
-        characters.Sort((x, y) => { return x.actionValue.CompareTo(y.actionValue); });     //QuickSort
+        orderSort();
+    }
+
+    void orderSort()
+    {
+        characters.Sort((x, y) => { return x.actionValue.CompareTo(y.actionValue); });
+        int i;
+        int value = characters[0].actionValue;
+        for (i = 0; i < characters.Count; i++)
+        {
+            characters[i].actionValue = characters[i].actionValue - value;
+            Debug.Log(characters[i].actionValue);
+        }
     }
 
     // Update is called once per frame
@@ -27,8 +39,13 @@ public class CharacterOrder : MonoBehaviour
 
     }
 
-    void orderChange()
+    public void orderChange()
     {
-
+        Character temp = characters[0];
+        temp.actionValue = temp.actionValueMax;
+        Debug.Log("重製後的"+ temp.actionValue);
+        characters.Remove(characters[0]);
+        characters.Add(temp);
+        orderSort();
     }
 }
