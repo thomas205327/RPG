@@ -29,7 +29,7 @@ public class CharacterOrder : MonoBehaviour
         for (i = 0; i < characters.Count; i++)
         {
             characters[i].actionValue = characters[i].actionValue - value;
-            Debug.Log(characters[i].actionValue);
+            //Debug.Log(characters[i].actionValue);
         } 
     }
 
@@ -43,7 +43,7 @@ public class CharacterOrder : MonoBehaviour
     {
         Character temp = characters[0];
         temp.actionValue = temp.actionValueMax;
-        Debug.Log("重製後的"+ temp.actionValue);
+        //Debug.Log("重製後的"+ temp.actionValue);
         characters.Remove(characters[0]);
         characters.Add(temp);
         orderSort();

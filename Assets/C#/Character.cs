@@ -6,18 +6,22 @@ using System;
 
 public abstract class Character : MonoBehaviour
 {
-    public Vector3 pos;
-    public int moveDis;
-    public int hp;
-    public int hpMax;
-    public int sp;
-    public int spMax;
-    public float speed;
-    public int actionValue;
-    public int actionValueMax;
-    public int attackDis;
-    public string characterName;
-    public string image;
+    public Vector3 pos;                     //角色位置
+    public int moveDis;                     //移動距離  
+    public int hp;                          //角色現在HP
+    public int hpMax;                       //角色Max Hp        儲存用
+    public int sp;                          //角色魔力
+    public int spMax;                       //角色Max 魔力      儲存用
+    public int STR;                         //物理攻擊力
+    public int INT;                         //魔法攻擊力
+    public int DEF;                         //物防
+    public int RES;                         //魔防
+    public float speed;                     //角色移動速度(用於移動動畫)
+    public int actionValue;                 //角色行動順序數值
+    public int actionValueMax;              //角色行動順序數值  儲存用
+    public int attackDis;                   //角色攻擊距離
+    public string characterName;            //角色名字
+    public string image;                    //角色圖片
 
     public virtual void moveDisplay(float dis){
         clearDisplay();
