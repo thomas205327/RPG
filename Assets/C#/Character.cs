@@ -22,6 +22,7 @@ public abstract class Character : MonoBehaviour
     public int attackDis;                   //角色攻擊距離
     public string characterName;            //角色名字
     public string image;                    //角色圖片
+    public int moveLock;
 
     public virtual void moveDisplay(float dis){
         clearDisplay();
@@ -36,7 +37,7 @@ public abstract class Character : MonoBehaviour
             {
                 
                 planes[i].GetComponent<MeshRenderer>().material.color = Color.blue;
-                planes[i].GetComponent<CanMovePlane>().moveLock = true;
+                //planes[i].GetComponent<CanMovePlane>().moveLock = true;
                 planes[i].GetComponent<CanMovePlane>().Obj1 = this;
             }
         }
@@ -54,7 +55,6 @@ public abstract class Character : MonoBehaviour
             {
 
                 planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
-                planes[i].GetComponent<CanMovePlane>().moveLock = true;
                 planes[i].GetComponent<CanMovePlane>().Obj1 = this;
             }
         }
@@ -73,23 +73,11 @@ public abstract class Character : MonoBehaviour
 
     public virtual void move(float x, float z)
     {
-        speed = 0.2f;
+        
     }
 
     public virtual void menuShow()
     {
         canvasController.Instance.menuShow();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

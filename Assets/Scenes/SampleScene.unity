@@ -168,8 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &31102906
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -278,8 +278,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &70079194
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -388,8 +388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &86236240
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -498,8 +498,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &104599368
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -608,8 +608,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &112065421
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -718,8 +718,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &130978105
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -828,8 +828,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &139981546
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -938,8 +938,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &146400153
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1218,8 +1218,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &273397418
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1406,8 +1406,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &310552902
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1516,8 +1516,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &310675529
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1626,8 +1626,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &341956121
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1736,8 +1736,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &355532158
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1846,8 +1846,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &388222498
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1956,8 +1956,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &411070448
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2066,8 +2066,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &414787565
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2176,8 +2176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &416802619
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2286,8 +2286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &418796574
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2601,8 +2601,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &461592102
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2711,8 +2711,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &475302950
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2821,8 +2821,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &476872228
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2931,8 +2931,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &507196119
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3124,8 +3124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &542691463
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3234,8 +3234,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &544626370
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3344,8 +3344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &547557996
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3650,7 +3650,7 @@ MonoBehaviour:
   skill: {fileID: 575153310}
   item: {fileID: 2099238981}
   end: {fileID: 2135086960}
-  image: {fileID: 0}
+  image: {fileID: 1939790359}
 --- !u!1 &622089846
 GameObject:
   m_ObjectHideFlags: 0
@@ -3698,8 +3698,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &622089849
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3808,8 +3808,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &667899326
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3918,8 +3918,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &696667629
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4106,8 +4106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &777756894
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4216,8 +4216,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &800391843
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4326,8 +4326,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &809997657
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4436,8 +4436,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &822484998
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4546,8 +4546,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &823819478
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4656,8 +4656,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &832359827
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4732,6 +4732,7 @@ GameObject:
   - component: {fileID: 863412122}
   - component: {fileID: 863412121}
   - component: {fileID: 863412120}
+  - component: {fileID: 863412124}
   m_Layer: 0
   m_Name: movePlane (11)
   m_TagString: MovePlane
@@ -4766,8 +4767,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &863412121
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4829,6 +4830,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863412118}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &863412124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863412118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27175a255a76ab545a0182703bfe4a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Obj1: {fileID: 0}
+  plane: {fileID: 0}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!1 &869939208
 GameObject:
   m_ObjectHideFlags: 0
@@ -4876,8 +4892,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &869939211
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4986,8 +5002,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &872643070
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5215,8 +5231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &896773500
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5325,8 +5341,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &898963712
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5435,8 +5451,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &910026810
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5545,8 +5561,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &948210103
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5632,12 +5648,17 @@ MonoBehaviour:
   hpMax: 0
   sp: 0
   spMax: 0
+  STR: 0
+  INT: 0
+  DEF: 0
+  RES: 0
   speed: 0
   actionValue: 0
   actionValueMax: 0
   attackDis: 0
   characterName: 
   image: 
+  moveLock: 0
 --- !u!1 &1057588762
 GameObject:
   m_ObjectHideFlags: 0
@@ -5685,8 +5706,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1057588765
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5795,8 +5816,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1077145806
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5905,8 +5926,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1115483314
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6015,8 +6036,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1116000845
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6244,8 +6265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1139575245
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6354,8 +6375,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1145295031
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6464,8 +6485,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1196221834
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6652,8 +6673,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1237980447
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6762,8 +6783,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1279465515
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6938,8 +6959,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1333892345
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7048,8 +7069,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1362551814
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7158,8 +7179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1364394748
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7329,8 +7350,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!1 &1421655948
 GameObject:
   m_ObjectHideFlags: 0
@@ -7378,8 +7399,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1421655951
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7488,8 +7509,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1472000544
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7598,8 +7619,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1473827264
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7708,8 +7729,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1517386636
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7818,8 +7839,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1527106353
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7928,8 +7949,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1570546136
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8038,8 +8059,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1593688784
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8148,8 +8169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1663476661
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8258,8 +8279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1703531919
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8368,8 +8389,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1705080383
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8478,8 +8499,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1728408371
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8588,8 +8609,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1745933826
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8742,8 +8763,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1799430789
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8852,8 +8873,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1862919878
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8962,8 +8983,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1867144853
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9072,8 +9093,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1890540778
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9182,8 +9203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1895375167
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9292,8 +9313,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1919737033
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9605,8 +9626,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1979877074
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9715,8 +9736,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &1992781659
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9825,8 +9846,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &2036800450
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9935,8 +9956,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &2064168671
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10077,8 +10098,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &2073484701
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10306,8 +10327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &2102070288
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10416,8 +10437,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &2113122145
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10526,8 +10547,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &2116355924
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10755,8 +10776,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj1: {fileID: 0}
+  plane: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
-  moveLock: 0
 --- !u!64 &2141110175
 MeshCollider:
   m_ObjectHideFlags: 0

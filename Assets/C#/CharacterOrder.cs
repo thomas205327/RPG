@@ -19,6 +19,7 @@ public class CharacterOrder : MonoBehaviour
         characters.Add(GameObject.Find("Kirito(Clone)").GetComponent<Character>());
         characters.Add(GameObject.Find("Fuze(Clone)").GetComponent<Character>());
         orderSort();
+        planeCharacterChange();
     }
 
     void orderSort()
@@ -47,5 +48,17 @@ public class CharacterOrder : MonoBehaviour
         characters.Remove(characters[0]);
         characters.Add(temp);
         orderSort();
+        planeCharacterChange();
+    }
+
+    public void planeCharacterChange()
+    {
+        GameObject[] planes;
+        planes = GameObject.FindGameObjectsWithTag("MovePlane");
+        int i;
+        for (i = 0; i < planes.Length; i++)
+        {
+            planes[i].GetComponent<CanMovePlane>().Obj1 = characters[0];
+        }
     }
 }
