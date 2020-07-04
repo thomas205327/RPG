@@ -5,13 +5,15 @@ using UnityEngine;
 public class CanMovePlane : MonoBehaviour
 {
     public Character Obj1;
+    public Object plane;
     public Vector3 pos;
-    public bool moveLock;
 
     // Start is called before the first frame update
     void Start()
     {
-        moveLock = false;
+        pos.x = Mathf.Round(GetComponent<Transform>().position.x);
+        pos.y = Mathf.Round(GetComponent<Transform>().position.y);
+        pos.z = Mathf.Round(GetComponent<Transform>().position.z);
     }
 
     // Update is called once per frame
@@ -22,7 +24,8 @@ public class CanMovePlane : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (moveLock == true)
+
+        if (GetComponent<MeshRenderer>().material.color == Color.blue)
         {
             Obj1.move(pos.x, pos.z);
         }
