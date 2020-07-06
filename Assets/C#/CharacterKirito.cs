@@ -24,6 +24,10 @@ public class CharacterKirito : Character
         characterName = "桐人";
         image = "Sword Art Online II - 20[01-32-37]";
         moveLock = 0;
+        STR = 10;
+        INT = 10;
+        DEF = 10;
+        RES = 10;
     }
 
     // Start is called before the first frame update
@@ -31,6 +35,7 @@ public class CharacterKirito : Character
     {
         moveToX = (int)pos.x;
         moveToZ = (int)pos.z;
+        planeSet();
     }
 
     override
@@ -79,13 +84,22 @@ public class CharacterKirito : Character
                 {
                     moveLock = 0;
                     moveToDis = 0;
+                    planeSet();
                 }
                 break;
         }
     }
 
     void OnMouseDown(){
-        menuShow();
-        //moveDisplay(moveDis);
+        if (plane.GetComponent<MeshRenderer>().material.color == Color.red &&
+            GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[0] != this)
+        {
+            Debug.Log("確定要攻擊敵人");
+            GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[0].attack(this);
+        }
+        else
+        {
+            menuShow();
+        }
     }
 }

@@ -24,6 +24,10 @@ public class CharacterFuze : Character
         characterName = "Fuze";
         image = "Fuze";
         moveLock = 0;
+        STR = 20;
+        INT = 10;
+        DEF = 5;
+        RES = 10;
     }
 
     // Start is called before the first frame update
@@ -31,6 +35,7 @@ public class CharacterFuze : Character
     {
         moveToX = (int)pos.x;
         moveToZ = (int)pos.z;
+        planeSet();
     }
 
     override
@@ -118,6 +123,7 @@ public class CharacterFuze : Character
                     Debug.Log("z要增加");
                     transform.position += new Vector3(0, 0, 1);
                     pos.z = pos.z + 1;
+                    planeSet();
                 }
                 
                 break;
@@ -126,7 +132,14 @@ public class CharacterFuze : Character
 
     void OnMouseDown()
     {
-        menuShow();
-        //moveDisplay(moveDis);
+        if (plane.GetComponent<MeshRenderer>().material.color == Color.red &&
+            GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[0] != this)
+        {
+            Debug.Log("確定要攻擊敵人");
+        }
+        else
+        {
+            menuShow();
+        }
     }
 }

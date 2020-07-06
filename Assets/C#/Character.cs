@@ -23,6 +23,22 @@ public abstract class Character : MonoBehaviour
     public string characterName;            //角色名字
     public string image;                    //角色圖片
     public int moveLock;
+    public GameObject plane;
+
+    public virtual void planeSet()
+    {
+        GameObject[] planes;
+        planes = GameObject.FindGameObjectsWithTag("MovePlane");
+        int i;
+        for (i = 0; i < planes.Length; i++)
+        {
+            if (Mathf.Round(planes[i].GetComponent<Transform>().position.x) == Mathf.Round(pos.x) && Mathf.Round(planes[i].GetComponent<Transform>().position.z) == Mathf.Round(pos.z))
+            {
+                this.GetComponent<Character>().plane = planes[i];
+                break;
+            }
+        }
+    }
 
     public virtual void moveDisplay(float dis){
         clearDisplay();
@@ -41,6 +57,11 @@ public abstract class Character : MonoBehaviour
                 planes[i].GetComponent<CanMovePlane>().Obj1 = this;
             }
         }
+
+        for (i = 0; i < GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters.Count; i++)
+        {
+            GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[i].planeSet();
+        }
     }
 
     public virtual void attackDisplay(float attackDis)
@@ -58,6 +79,12 @@ public abstract class Character : MonoBehaviour
                 planes[i].GetComponent<CanMovePlane>().Obj1 = this;
             }
         }
+
+        for (i=0;i< GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters.Count; i++)
+        {
+            GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[i].planeSet();
+        }
+        
     }
 
     public virtual void clearDisplay()
@@ -69,6 +96,17 @@ public abstract class Character : MonoBehaviour
         {
             planes[i].GetComponent<MeshRenderer>().material.color = Color.clear;
         }
+
+        for (i = 0; i < GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters.Count; i++)
+        {
+            GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[i].planeSet();
+        }
+    }
+
+    public virtual void attack(Character Obj1)
+    {
+        Obj1.hp = Obj1.hp - (STR - Obj1.DEF);
+        Debug.Log(Obj1.name+"已受到"+ (STR - Obj1.DEF) +"點攻擊");
     }
 
     public virtual void move(float x, float z)

@@ -24,7 +24,6 @@ public class CanMovePlane : MonoBehaviour
 
     void OnMouseDown()
     {
-
         if (GetComponent<MeshRenderer>().material.color == Color.blue)
         {
             Obj1.move(pos.x, pos.z);
