@@ -59,14 +59,14 @@ public class CharacterFuze : Character
                 {
                     moveLock = 2;
                     rotate = 0;
-                    Debug.Log(" x: "+pos.x +"  z:  "+ pos.z);
-                    Debug.Log(" movex: " + moveToX + "   movez:  " + moveToZ);
+                    //Debug.Log(" x: "+pos.x +"  z:  "+ pos.z);
+                    //Debug.Log(" movex: " + moveToX + "   movez:  " + moveToZ);
                 }
                 break;
             case 2://移動x
                 if (pos.x >= moveToX)
                 {
-                    Debug.Log("x要減少");
+                    //Debug.Log("x要減少");
                     if (pos.x <= moveToX)
                     {
                         moveLock = 3;
@@ -82,7 +82,7 @@ public class CharacterFuze : Character
                         moveLock = 3;
                         break;
                     }
-                    Debug.Log("x要增加");
+                    //Debug.Log("x要增加");
                     transform.position += new Vector3(1, 0, 0);
                     pos.x = pos.x + 1;
                 }
@@ -100,7 +100,7 @@ public class CharacterFuze : Character
             case 4://移動z
                 if (pos.z >= moveToZ)
                 {
-                    Debug.Log("z要減少");
+                    //Debug.Log("z要減少");
                     if (pos.z <= moveToZ)
                     {
                         moveLock = 0;
@@ -120,7 +120,7 @@ public class CharacterFuze : Character
                         GameObject.Find("Canvas").GetComponent<canvasController>().move.GetComponent<Button>().interactable = false;
                         break;
                     }
-                    Debug.Log("z要增加");
+                    //Debug.Log("z要增加");
                     transform.position += new Vector3(0, 0, 1);
                     pos.z = pos.z + 1;
                     planeSet();
@@ -136,6 +136,7 @@ public class CharacterFuze : Character
             GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[0] != this)
         {
             Debug.Log("確定要攻擊敵人");
+            GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[0].attack(this);
         }
         else
         {

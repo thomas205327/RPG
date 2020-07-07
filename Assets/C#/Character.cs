@@ -107,6 +107,8 @@ public abstract class Character : MonoBehaviour
     {
         Obj1.hp = Obj1.hp - (STR - Obj1.DEF);
         Debug.Log(Obj1.name+"已受到"+ (STR - Obj1.DEF) +"點攻擊");
+        clearDisplay();                 //攻擊完清除藍色地板
+        GameObject.Find("Canvas").GetComponent<canvasController>().attack.GetComponent<Button>().interactable = false;
     }
 
     public virtual void move(float x, float z)

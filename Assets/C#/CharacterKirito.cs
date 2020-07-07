@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterKirito : Character
 {
     int rotate = 0;
-    int moveToDis = 0;
     int moveToX;
     int moveToZ;
     void Awake()
@@ -43,6 +43,8 @@ public class CharacterKirito : Character
     {
         speed = 0.2f;
         moveLock = 1;
+        moveToX = (int)x;
+        moveToZ = (int)z;
     }
 
     // Update is called once per frame
@@ -57,15 +59,32 @@ public class CharacterKirito : Character
                 {
                     moveLock = 2;
                     rotate = 0;
+                    //Debug.Log(" x: "+pos.x +"  z:  "+ pos.z);
+                    //Debug.Log(" movex: " + moveToX + "   movez:  " + moveToZ);
                 }
                 break;
-            case 2://移動
-                transform.Translate(1, 0, 0);
-                moveToDis = moveToDis + 1;
+            case 2://移動x
                 if (pos.x >= moveToX)
                 {
-                    moveLock = 3;
-                    moveToDis = 0;
+                    //Debug.Log("x要減少");
+                    if (pos.x <= moveToX)
+                    {
+                        moveLock = 3;
+                        break;
+                    }
+                    transform.position += new Vector3(-1, 0, 0);
+                    pos.x = pos.x - 1;
+                }
+                else
+                {
+                    if (pos.x >= moveToX)
+                    {
+                        moveLock = 3;
+                        break;
+                    }
+                    //Debug.Log("x要增加");
+                    transform.position += new Vector3(1, 0, 0);
+                    pos.x = pos.x + 1;
                 }
                 break;
             case 3://轉向
@@ -75,17 +94,38 @@ public class CharacterKirito : Character
                 {
                     moveLock = 4;
                     rotate = 0;
+                    Debug.Log(" x: " + pos.x + "  z:  " + pos.z);
                 }
                 break;
-            case 4://移動
-                transform.Translate(0, 0, 1);
-                moveToDis = moveToDis + 1;
+            case 4://移動z
                 if (pos.z >= moveToZ)
                 {
-                    moveLock = 0;
-                    moveToDis = 0;
+                    //Debug.Log("z要減少");
+                    if (pos.z <= moveToZ)
+                    {
+                        moveLock = 0;
+                        clearDisplay();                 //移動完清除藍色地板
+                        GameObject.Find("Canvas").GetComponent<canvasController>().move.GetComponent<Button>().interactable = false;
+                        break;
+                    }
+                    transform.position += new Vector3(0, 0, -1);
+                    pos.z = pos.z - 1;
+                }
+                else
+                {
+                    if (pos.z >= moveToZ)
+                    {
+                        moveLock = 0;
+                        clearDisplay();                 //移動完清除藍色地板
+                        GameObject.Find("Canvas").GetComponent<canvasController>().move.GetComponent<Button>().interactable = false;
+                        break;
+                    }
+                    //Debug.Log("z要增加");
+                    transform.position += new Vector3(0, 0, 1);
+                    pos.z = pos.z + 1;
                     planeSet();
                 }
+
                 break;
         }
     }

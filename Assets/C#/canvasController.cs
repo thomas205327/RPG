@@ -90,11 +90,16 @@ public class canvasController : MonoBehaviour
         Character Obj1 = characterOrder.characters[0];
         Obj1.clearDisplay();
         characterOrder.orderChange();
+        move.GetComponent<Button>().interactable = true;
+        attack.GetComponent<Button>().interactable = true;
+        skill.GetComponent<Button>().interactable = true;
+        item.GetComponent<Button>().interactable = true;
         move.SetActive(false);
         attack.SetActive(false);
         skill.SetActive(false);
         item.SetActive(false);
         image.enabled = false;
         end.SetActive(false);
+       
     }
 }
