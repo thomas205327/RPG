@@ -120,4 +120,16 @@ public abstract class Character : MonoBehaviour
     {
         canvasController.Instance.menuShow();
     }
+
+    public virtual void automove()
+    {
+
+
+
+
+
+    }
+
+
+
 }
