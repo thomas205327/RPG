@@ -65,24 +65,24 @@ public class CharacterOrder : MonoBehaviour
 
     void movingdis()
     {
-        List<int[]> enemy = new List<int[2]>();
-        List<int[]> partner = new List<int[2]>();
-        List<int> mCount = new List<int>();
-        Character now;
-        List<int[]> canMove = new List<int[2]>();
+        List<float[]> enemy = new List<float[]>();
+        List<float[]> partner = new List<float[]>();
+        List<float> mCount = new List<float>();
+        Character now = characters[0];
+        List<float[]> canMove = new List<float[]>();
 
         foreach (Character element in characters)
         {
             if (element.team == 0)
             {
-                int[2] entry;
+                float[] entry = new float[2];
                 entry[0] = element.pos.x;
                 entry[1] = element.pos.z;
                 partner.Add(entry);
             }
             else
             {
-                int[2] entry;
+                float[] entry = new float[2];
                 entry[0] = element.pos.x;
                 entry[1] = element.pos.z;
                 enemy.Add(entry);
@@ -91,22 +91,35 @@ public class CharacterOrder : MonoBehaviour
 
 
         }
-        mCount.Add(now.movDis);
-        canMove.Add(new int[] = (now.pos.x, now.pos.z));
+        mCount.Add(now.moveDis);
+
+        float[] temp = new float[2];
+
+        temp[0] = now.pos.x;
+        temp[1] = now.pos.z;
+
+        canMove.Add(temp);
 
         int canMovecount = 0;
 
         while(canMove.Count > canMovecount)
         {
+            float move = mCount[canMovecount];
+
+            if(move == 0)
+            {
+                canMovecount++;
+                continue;
+            }
 
             //上
-            int duplicateflag = 0;
-            int[2] nowchecking;
-            nowchecking[0] = canMove.FindIndex(canMovecount)[0];
-            nowchecking[1] = canMove.FindIndex(canMovecount)[1] + 1;
+            float duplicateflag = 0;
+            float[] nowchecking = new float[2];
+            nowchecking[0] = canMove[canMovecount][0];
+            nowchecking[1] = canMove[canMovecount][1] + 10;
 
             //檢查是否有敵人
-            foreach (int[] element in enemy)
+            foreach (float[] element in enemy)
             {
                 if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
                 {
@@ -115,7 +128,7 @@ public class CharacterOrder : MonoBehaviour
                 }
             }
             //檢查是否有隊友
-            foreach (int[] element in partner)
+            foreach (float[] element in partner)
             {
                 if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
                 {
@@ -124,7 +137,7 @@ public class CharacterOrder : MonoBehaviour
                 }
             }
             //檢查是否有重複
-            foreach (int[] element in canMove)
+            foreach (float[] element in canMove)
             {
                 if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
                 {
@@ -136,18 +149,19 @@ public class CharacterOrder : MonoBehaviour
             if (duplicateflag == 0)
             {
                 canMove.Add(nowchecking);
+                mCount.Add(move - 1);
             }
 
 
 
             //下
-            int duplicateflag = 0;
-            int[2] nowchecking;
-            nowchecking[0] = canMove.FindIndex(canMovecount)[0];
-            nowchecking[1] = canMove.FindIndex(canMovecount)[1] - 1;
+            duplicateflag = 0;
+            
+            nowchecking[0] = canMove[canMovecount][0];
+            nowchecking[1] = canMove[canMovecount][1] - 10;
 
             //檢查是否有敵人
-            foreach (int[] element in enemy)
+            foreach (float[] element in enemy)
             {
                 if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
                 {
@@ -156,7 +170,7 @@ public class CharacterOrder : MonoBehaviour
                 }
             }
             //檢查是否有隊友
-            foreach (int[] element in partner)
+            foreach (float[] element in partner)
             {
                 if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
                 {
@@ -165,7 +179,7 @@ public class CharacterOrder : MonoBehaviour
                 }
             }
             //檢查是否有重複
-            foreach (int[] element in canMove)
+            foreach (float[] element in canMove)
             {
                 if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
                 {
@@ -177,16 +191,17 @@ public class CharacterOrder : MonoBehaviour
             if (duplicateflag == 0)
             {
                 canMove.Add(nowchecking);
+                mCount.Add(move - 1);
             }
 
             //左
-            int duplicateflag = 0;
-            int[2] nowchecking;
-            nowchecking[0] = canMove.FindIndex(canMovecount)[0] - 1;
-            nowchecking[1] = canMove.FindIndex(canMovecount)[1];
+            duplicateflag = 0;
+            
+            nowchecking[0] = canMove[canMovecount][0] - 10;
+            nowchecking[1] = canMove[canMovecount][1];
 
             //檢查是否有敵人
-            foreach (int[] element in enemy)
+            foreach (float[] element in enemy)
             {
                 if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
                 {
@@ -195,7 +210,7 @@ public class CharacterOrder : MonoBehaviour
                 }
             }
             //檢查是否有隊友
-            foreach (int[] element in partner)
+            foreach (float[] element in partner)
             {
                 if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
                 {
@@ -204,7 +219,7 @@ public class CharacterOrder : MonoBehaviour
                 }
             }
             //檢查是否有重複
-            foreach (int[] element in canMove)
+            foreach (float[] element in canMove)
             {
                 if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
                 {
@@ -216,16 +231,17 @@ public class CharacterOrder : MonoBehaviour
             if (duplicateflag == 0)
             {
                 canMove.Add(nowchecking);
+                mCount.Add(move - 1);
             }
 
             //右
-            int duplicateflag = 0;
-            int[2] nowchecking;
-            nowchecking[0] = canMove.FindIndex(canMovecount)[0] + 1;
-            nowchecking[1] = canMove.FindIndex(canMovecount)[1];
+            duplicateflag = 0;
+            
+            nowchecking[0] = canMove[canMovecount][0] + 10;
+            nowchecking[1] = canMove[canMovecount][1];
 
             //檢查是否有敵人
-            foreach (int[] element in enemy)
+            foreach (float[] element in enemy)
             {
                 if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
                 {
@@ -234,7 +250,7 @@ public class CharacterOrder : MonoBehaviour
                 }
             }
             //檢查是否有隊友
-            foreach (int[] element in partner)
+            foreach (float[] element in partner)
             {
                 if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
                 {
@@ -243,7 +259,7 @@ public class CharacterOrder : MonoBehaviour
                 }
             }
             //檢查是否有重複
-            foreach (int[] element in canMove)
+            foreach (float[] element in canMove)
             {
                 if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
                 {
@@ -255,6 +271,7 @@ public class CharacterOrder : MonoBehaviour
             if (duplicateflag == 0)
             {
                 canMove.Add(nowchecking);
+                mCount.Add(move - 1);
             }
 
             canMovecount++;
@@ -264,6 +281,9 @@ public class CharacterOrder : MonoBehaviour
 
 
     }
+
+
+
 
 
 
