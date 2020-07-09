@@ -3,31 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CharacterFuze : Character
+public class CharacterMidoriya : Character
 {
     int rotate = 0;
     int moveToX;
     int moveToZ;
     void Awake()
     {
-        Vector3 move = new Vector3(10f, 3.5f, 30f);
+        Vector3 move = new Vector3(-30f, 3.5f, 0);
         pos = move;
         moveDis = 30;
-        hp = 100;
-        hpMax = 100;
+        hp = 80;
+        hpMax = 80;
         sp = 50;
         spMax = 50;
         speed = 0;
-        actionValue = 40;
-        actionValueMax = 40;
+        actionValue = 50;
+        actionValueMax = 50;
         attackDis = 10;
-        characterName = "Fuze";
-        image = "Fuze";
+        characterName = "綠谷";
+        image = "4232";
         moveLock = 0;
-        STR = 20;
-        INT = 10;
-        DEF = 5;
-        RES = 10;
+        STR = 50;
+        INT = 0;
+        DEF = 0;
+        RES = 0;
         GetComponent<Character>().damageFloatUp = GameObject.Find("damage");
     }
 
@@ -51,12 +51,12 @@ public class CharacterFuze : Character
     // Update is called once per frame
     void Update()
     {
-        switch(moveLock)
+        switch (moveLock)
         {
             case 1://轉向
                 transform.Rotate(0, 3, 0);
                 rotate = rotate + 3;
-                if(rotate >= 90)
+                if (rotate >= 90)
                 {
                     moveLock = 2;
                     rotate = 0;
@@ -126,7 +126,7 @@ public class CharacterFuze : Character
                     pos.z = pos.z + 1;
                     planeSet();
                 }
-                
+
                 break;
         }
     }
