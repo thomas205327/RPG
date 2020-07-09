@@ -156,7 +156,7 @@ public class CharacterOrder : MonoBehaviour
             if (duplicateflag == 0)
             {
                 canMove.Add(nowchecking);
-                mCount.Add(move - 1);
+                mCount.Add(move - 10);
             }
 
 
@@ -198,7 +198,7 @@ public class CharacterOrder : MonoBehaviour
             if (duplicateflag == 0)
             {
                 canMove.Add(nowchecking);
-                mCount.Add(move - 1);
+                mCount.Add(move - 10);
             }
 
             //左
@@ -238,7 +238,7 @@ public class CharacterOrder : MonoBehaviour
             if (duplicateflag == 0)
             {
                 canMove.Add(nowchecking);
-                mCount.Add(move - 1);
+                mCount.Add(move - 10);
             }
 
             //右
@@ -278,7 +278,7 @@ public class CharacterOrder : MonoBehaviour
             if (duplicateflag == 0)
             {
                 canMove.Add(nowchecking);
-                mCount.Add(move - 1);
+                mCount.Add(move - 10);
             }
 
             canMovecount++;
