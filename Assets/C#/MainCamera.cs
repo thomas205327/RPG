@@ -10,7 +10,7 @@ public class MainCamera : MonoBehaviour
 
     }
 
-    public float speed = 1.0f;
+    public float speed = 50.0f;
 
     // Update is called once per frame
     void Update()

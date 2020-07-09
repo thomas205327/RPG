@@ -13,6 +13,7 @@ public class canvasController : MonoBehaviour
     public GameObject skill;
     public GameObject item;
     public GameObject end;
+    public GameObject backToChar;
     public Image image;
     public static canvasController Instance;
     // Start is called before the first frame update
@@ -25,6 +26,7 @@ public class canvasController : MonoBehaviour
         skill.GetComponent<Button>().onClick.AddListener(skillOnclick);
         item.GetComponent<Button>().onClick.AddListener(itemOnclick);
         end.GetComponent<Button>().onClick.AddListener(endOnclick);
+        backToChar.GetComponent<Button>().onClick.AddListener(backToCharOnclick);
     }
 
     void Awake()
@@ -37,6 +39,8 @@ public class canvasController : MonoBehaviour
         item.SetActive(false);
         image.enabled = false;
         end.SetActive(false);
+        backToChar.SetActive(false);
+
     }
 
     public void menuShow()
@@ -101,5 +105,11 @@ public class canvasController : MonoBehaviour
         image.enabled = false;
         end.SetActive(false);
        
+    }
+
+    public void backToCharOnclick() { 
+
+
+        
     }
 }
