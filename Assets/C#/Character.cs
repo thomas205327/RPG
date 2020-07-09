@@ -24,6 +24,9 @@ public abstract class Character : MonoBehaviour
     public string image;                    //角色圖片
     public int moveLock;
     public GameObject plane;
+    public GameObject damageFloatUp;
+    public int team;                        //隊伍
+
 
     public virtual void planeSet()
     {
@@ -107,6 +110,7 @@ public abstract class Character : MonoBehaviour
     {
         Obj1.hp = Obj1.hp - (STR - Obj1.DEF);
         Debug.Log(Obj1.name+"已受到"+ (STR - Obj1.DEF) +"點攻擊");
+        damageFloatUp.GetComponent<DamageFloatUp>().beAttack(Obj1, (STR - Obj1.DEF));
         clearDisplay();                 //攻擊完清除藍色地板
         GameObject.Find("Canvas").GetComponent<canvasController>().attack.GetComponent<Button>().interactable = false;
     }
