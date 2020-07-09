@@ -98,18 +98,39 @@ public class canvasController : MonoBehaviour
         attack.GetComponent<Button>().interactable = true;
         skill.GetComponent<Button>().interactable = true;
         item.GetComponent<Button>().interactable = true;
+
+       GameObject.Find("Main Camera").GetComponent<MainCamera>().CameraReturn();
+
+    }
+
+    public void menuHide() {
         move.SetActive(false);
         attack.SetActive(false);
         skill.SetActive(false);
         item.SetActive(false);
         image.enabled = false;
         end.SetActive(false);
-       
+        //Debug.Log(Resources.Load<Sprite>(characterOrder.characters[0].image));
+        image.GetComponent<Image>().sprite = Resources.Load<Sprite>(characterOrder.characters[0].image);
+
     }
 
-    public void backToCharOnclick() { 
-
-
+    public void showReturn() {
         
+        backToChar.SetActive(true);
+
+    }
+
+    public void hideReturn()
+    {
+
+        backToChar.SetActive(false);
+
+    }
+
+    public void backToCharOnclick() {
+
+        GameObject.Find("Main Camera").GetComponent<MainCamera>().CameraReturn();
+        hideReturn();
     }
 }
