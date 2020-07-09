@@ -28,6 +28,7 @@ public class CharacterMidoriya : Character
         INT = 0;
         DEF = 0;
         RES = 0;
+        team = 0;
         GetComponent<Character>().damageFloatUp = GameObject.Find("damage");
     }
 

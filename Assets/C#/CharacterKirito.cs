@@ -28,6 +28,7 @@ public class CharacterKirito : Character
         INT = 10;
         DEF = 10;
         RES = 10;
+        team = 0;
         GetComponent<Character>().damageFloatUp = GameObject.Find("damage");
     }
 

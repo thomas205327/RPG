@@ -28,6 +28,7 @@ public class CharacterFuze : Character
         INT = 10;
         DEF = 5;
         RES = 10;
+        team = 1;
         GetComponent<Character>().damageFloatUp = GameObject.Find("damage");
     }
 
