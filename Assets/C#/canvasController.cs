@@ -13,6 +13,7 @@ public class canvasController : MonoBehaviour
     public GameObject skill;
     public GameObject item;
     public GameObject end;
+    public GameObject backToChar;
     public Image image;
     public static canvasController Instance;
     // Start is called before the first frame update
@@ -25,6 +26,7 @@ public class canvasController : MonoBehaviour
         skill.GetComponent<Button>().onClick.AddListener(skillOnclick);
         item.GetComponent<Button>().onClick.AddListener(itemOnclick);
         end.GetComponent<Button>().onClick.AddListener(endOnclick);
+        backToChar.GetComponent<Button>().onClick.AddListener(backToCharOnclick);
     }
 
     void Awake()
@@ -37,6 +39,8 @@ public class canvasController : MonoBehaviour
         item.SetActive(false);
         image.enabled = false;
         end.SetActive(false);
+        backToChar.SetActive(false);
+
     }
 
     public void menuShow()
@@ -95,12 +99,39 @@ public class canvasController : MonoBehaviour
         attack.GetComponent<Button>().interactable = true;
         skill.GetComponent<Button>().interactable = true;
         item.GetComponent<Button>().interactable = true;
+
+       GameObject.Find("Main Camera").GetComponent<MainCamera>().CameraReturn();
+
+    }
+
+    public void menuHide() {
         move.SetActive(false);
         attack.SetActive(false);
         skill.SetActive(false);
         item.SetActive(false);
         image.enabled = false;
         end.SetActive(false);
-       
+        //Debug.Log(Resources.Load<Sprite>(characterOrder.characters[0].image));
+        image.GetComponent<Image>().sprite = Resources.Load<Sprite>(characterOrder.characters[0].image);
+
+    }
+
+    public void showReturn() {
+        
+        backToChar.SetActive(true);
+
+    }
+
+    public void hideReturn()
+    {
+
+        backToChar.SetActive(false);
+
+    }
+
+    public void backToCharOnclick() {
+
+        GameObject.Find("Main Camera").GetComponent<MainCamera>().CameraReturn();
+        hideReturn();
     }
 }
