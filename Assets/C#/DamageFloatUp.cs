@@ -39,7 +39,7 @@ public class DamageFloatUp : MonoBehaviour
         if (updateLock == 1)
         {
             //向上漂浮控制
-            gameObject.GetComponent<RectTransform>().anchoredPosition = gameObject.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, 1);
+            gameObject.GetComponent<RectTransform>().anchoredPosition = gameObject.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, 0.1f);
         }
     }
 

@@ -25,6 +25,8 @@ public abstract class Character : MonoBehaviour
     public int moveLock;
     public GameObject plane;
     public GameObject damageFloatUp;
+    public int team;                        //隊伍
+
 
     public virtual void planeSet()
     {
@@ -122,4 +124,16 @@ public abstract class Character : MonoBehaviour
     {
         canvasController.Instance.menuShow();
     }
+
+    public virtual void automove()
+    {
+
+
+
+
+
+    }
+
+
+
 }
