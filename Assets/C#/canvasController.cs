@@ -74,7 +74,8 @@ public class canvasController : MonoBehaviour
     {
         Debug.Log("技能");
         Character Obj1 = characterOrder.characters[0];
-        Obj1.moveDisplay(Obj1.moveDis);
+        GameObject Order = GameObject.Find("CharacterOrder");
+        Order.GetComponent<CharacterOrder>().movingdis();
     }
 
     public void itemOnclick()

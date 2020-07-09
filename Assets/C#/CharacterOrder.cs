@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-
 public class CharacterOrder : MonoBehaviour
 {
     public List<Character> characters;
@@ -67,7 +66,7 @@ public class CharacterOrder : MonoBehaviour
     }
 
 
-    void movingdis()
+    public void movingdis()
     {
         List<float[]> enemy = new List<float[]>();
         List<float[]> partner = new List<float[]>();
@@ -298,7 +297,7 @@ public class CharacterOrder : MonoBehaviour
 
         
         float[] shortest = new float[2];
-        float shortestdis = 999;
+        float shortestdis = 999999999;
         //最近的敵人
         foreach(float[] e in enemy)
         {
@@ -319,12 +318,18 @@ public class CharacterOrder : MonoBehaviour
                 enemyindis = 1;
             }
         }
-        
-        
+
+        Debug.Log(shortest[0]);
+        Debug.Log(shortest[1]);
+        Debug.Log(enemyindis);
+
+
+
+
         //範圍內
         if (enemyindis == 1)
         {
-            float n = 999;
+            float n = 999999999;
             float[] temp2 = new float[2];
             float[] near = new float[2];
             int index = 0;
@@ -455,12 +460,18 @@ public class CharacterOrder : MonoBehaviour
         else
         {
             float[] nearest = new float[2];
-            shortestdis = 999;
+            shortestdis = 999999999;
             
             //離最近敵人最近地板
             foreach (float[] e in canMove)
             {
                 float dis = (shortest[0] - e[0]) * (shortest[0] - e[0]) + (shortest[1] - e[1]) * (shortest[1] - e[1]);
+                //Debug.Log("canmove");
+                //Debug.Log(e[0]);
+                //Debug.Log(e[1]);
+                //Debug.Log(dis);
+
+
                 if (dis < shortestdis)
                 {
                     nearest[0] = e[0];
@@ -469,6 +480,17 @@ public class CharacterOrder : MonoBehaviour
                 }
 
             }
+            //Debug.Log(nearest[0]);
+            //Debug.Log(nearest[1]);
+
+
+            foreach (float[] e in canMove)
+            {
+                Debug.Log(e[0]+","+ e[1]);
+            }
+
+
+                
 
             now.move(nearest[0], nearest[1]);
         }
