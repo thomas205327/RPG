@@ -28,6 +28,7 @@ public class CharacterFuze : Character
         INT = 10;
         DEF = 5;
         RES = 10;
+        GetComponent<Character>().damageFloatUp = GameObject.Find("damage");
     }
 
     // Start is called before the first frame update
@@ -94,7 +95,7 @@ public class CharacterFuze : Character
                 {
                     moveLock = 4;
                     rotate = 0;
-                    Debug.Log(" x: " + pos.x + "  z:  " + pos.z);
+                    //Debug.Log(" x: " + pos.x + "  z:  " + pos.z);
                 }
                 break;
             case 4://移動z
