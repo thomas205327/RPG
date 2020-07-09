@@ -61,4 +61,211 @@ public class CharacterOrder : MonoBehaviour
             planes[i].GetComponent<CanMovePlane>().Obj1 = characters[0];
         }
     }
+
+
+    void movingdis()
+    {
+        List<int[]> enemy = new List<int[2]>();
+        List<int[]> partner = new List<int[2]>();
+        List<int> mCount = new List<int>();
+        Character now;
+        List<int[]> canMove = new List<int[2]>();
+
+        foreach (Character element in characters)
+        {
+            if (element.team == 0)
+            {
+                int[2] entry;
+                entry[0] = element.pos.x;
+                entry[1] = element.pos.z;
+                partner.Add(entry);
+            }
+            else
+            {
+                int[2] entry;
+                entry[0] = element.pos.x;
+                entry[1] = element.pos.z;
+                enemy.Add(entry);
+            }
+
+
+
+        }
+        mCount.Add(now.movDis);
+        canMove.Add(new int[] = (now.pos.x, now.pos.z));
+
+        int canMovecount = 0;
+
+        while(canMove.Count > canMovecount)
+        {
+
+            //上
+            int duplicateflag = 0;
+            int[2] nowchecking;
+            nowchecking[0] = canMove.FindIndex(canMovecount)[0];
+            nowchecking[1] = canMove.FindIndex(canMovecount)[1] + 1;
+
+            //檢查是否有敵人
+            foreach (int[] element in enemy)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有隊友
+            foreach (int[] element in partner)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有重複
+            foreach (int[] element in canMove)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+
+            if (duplicateflag == 0)
+            {
+                canMove.Add(nowchecking);
+            }
+
+
+
+            //下
+            int duplicateflag = 0;
+            int[2] nowchecking;
+            nowchecking[0] = canMove.FindIndex(canMovecount)[0];
+            nowchecking[1] = canMove.FindIndex(canMovecount)[1] - 1;
+
+            //檢查是否有敵人
+            foreach (int[] element in enemy)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有隊友
+            foreach (int[] element in partner)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有重複
+            foreach (int[] element in canMove)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+
+            if (duplicateflag == 0)
+            {
+                canMove.Add(nowchecking);
+            }
+
+            //左
+            int duplicateflag = 0;
+            int[2] nowchecking;
+            nowchecking[0] = canMove.FindIndex(canMovecount)[0] - 1;
+            nowchecking[1] = canMove.FindIndex(canMovecount)[1];
+
+            //檢查是否有敵人
+            foreach (int[] element in enemy)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有隊友
+            foreach (int[] element in partner)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有重複
+            foreach (int[] element in canMove)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+
+            if (duplicateflag == 0)
+            {
+                canMove.Add(nowchecking);
+            }
+
+            //右
+            int duplicateflag = 0;
+            int[2] nowchecking;
+            nowchecking[0] = canMove.FindIndex(canMovecount)[0] + 1;
+            nowchecking[1] = canMove.FindIndex(canMovecount)[1];
+
+            //檢查是否有敵人
+            foreach (int[] element in enemy)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有隊友
+            foreach (int[] element in partner)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有重複
+            foreach (int[] element in canMove)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+
+            if (duplicateflag == 0)
+            {
+                canMove.Add(nowchecking);
+            }
+
+            canMovecount++;
+
+
+        }
+
+
+    }
+
+
+
+
 }

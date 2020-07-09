@@ -24,6 +24,7 @@ public abstract class Character : MonoBehaviour
     public string image;                    //角色圖片
     public int moveLock;
     public GameObject plane;
+    public int team;                        //隊伍
 
     public virtual void planeSet()
     {
