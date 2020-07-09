@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 
 public class CharacterOrder : MonoBehaviour
@@ -70,6 +72,10 @@ public class CharacterOrder : MonoBehaviour
         List<float> mCount = new List<float>();
         Character now = characters[0];
         List<float[]> canMove = new List<float[]>();
+
+        List<float> enemydis = new List<float>();
+
+
 
         foreach (Character element in characters)
         {
@@ -278,6 +284,196 @@ public class CharacterOrder : MonoBehaviour
 
 
         }
+
+
+
+
+
+
+
+
+
+
+        
+        float[] shortest = new float[2];
+        float shortestdis = 999;
+        //最近的敵人
+        foreach(float[] e in enemy)
+        {
+            float dis = (now.pos.x - e[0])* (now.pos.x - e[0]) + (now.pos.z - e[1])* (now.pos.z - e[1]);
+            if (dis < shortestdis)
+            {
+                shortest[0] = e[0];
+                shortest[1] = e[1];
+                shortestdis = dis;
+            }
+
+        }
+        int enemyindis = 0;
+        foreach (float[] e in canMove)
+        {
+            if (e[0] == shortest[0] && e[1] == shortest[1])
+            {
+                enemyindis = 1;
+            }
+        }
+        
+        
+        //範圍內
+        if (enemyindis == 1)
+        {
+            float n = 999;
+            float[] temp2 = new float[2];
+            float[] near = new float[2];
+            int index = 0;
+
+            //上
+            temp2[0] = shortest[0] + 10;
+            temp2[1] = shortest[1];
+
+            int notfound = 1;
+            for(int i = 0; i < canMove.Count; i++)
+            {
+                if (canMove[i][0] == temp2[0] && canMove[i][1] == temp2[1])
+                {
+                    index = i;
+                    notfound = 0;
+                    break;
+                }
+            }
+            if (notfound != 1)
+            {
+                if (mCount[index] < n)
+                {
+                    near[0] = temp2[0];
+                    near[1] = temp2[1];
+                    n = mCount[index];
+                }
+            }
+            
+
+
+            //下
+            temp2[0] = shortest[0] - 10;
+            temp2[1] = shortest[1];
+
+            notfound = 1;
+            for (int i = 0; i < canMove.Count; i++)
+            {
+                if (canMove[i][0] == temp2[0] && canMove[i][1] == temp2[1])
+                {
+                    index = i;
+                    notfound = 0;
+                    break;
+                }
+            }
+
+            if (notfound != 1)
+            {
+                if (mCount[index] < n)
+                {
+                    near[0] = temp2[0];
+                    near[1] = temp2[1];
+                    n = mCount[index];
+                }
+            }
+
+            
+
+
+            //左
+            temp2[0] = shortest[0];
+            temp2[1] = shortest[1] - 10;
+
+            notfound = 1;
+            for (int i = 0; i < canMove.Count; i++)
+            {
+                if (canMove[i][0] == temp2[0] && canMove[i][1] == temp2[1])
+                {
+                    index = i;
+                    notfound = 0;
+                    break;
+                }
+            }
+
+            if (notfound != 1)
+            {
+                if (mCount[index] < n)
+                {
+                    near[0] = temp2[0];
+                    near[1] = temp2[1];
+                    n = mCount[index];
+                }
+            }
+
+            
+
+
+            //右
+            temp2[0] = shortest[0];
+            temp2[1] = shortest[1] + 10;
+
+            notfound = 1;
+            for (int i = 0; i < canMove.Count; i++)
+            {
+                if (canMove[i][0] == temp2[0] && canMove[i][1] == temp2[1])
+                {
+                    index = i;
+                    notfound = 0;
+                    break;
+                }
+            }
+
+            if (notfound != 1)
+            {
+                if (mCount[index] < n)
+                {
+                    near[0] = temp2[0];
+                    near[1] = temp2[1];
+                    n = mCount[index];
+                }
+            }
+
+            now.move(near[0], near[1]);
+
+            foreach(Character e in characters)
+            {
+                if(e.pos.x == shortest[0] && e.pos.z == shortest[1])
+                {
+                    now.attack(e);
+                    GameObject ending = GameObject.Find("Canvas");
+                    ending.GetComponent<canvasController>().endOnclick();
+                    
+                }
+            }
+
+        }
+
+        //範圍外
+        else
+        {
+            float[] nearest = new float[2];
+            shortestdis = 999;
+            
+            //離最近敵人最近地板
+            foreach (float[] e in canMove)
+            {
+                float dis = (shortest[0] - e[0]) * (shortest[0] - e[0]) + (shortest[1] - e[1]) * (shortest[1] - e[1]);
+                if (dis < shortestdis)
+                {
+                    nearest[0] = e[0];
+                    nearest[1] = e[1];
+                    shortestdis = dis;
+                }
+
+            }
+
+            now.move(nearest[0], nearest[1]);
+        }
+
+
+        
+
 
 
     }
