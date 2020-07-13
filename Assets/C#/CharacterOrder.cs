@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+
 public class CharacterOrder : MonoBehaviour
 {
     public List<Character> characters;
@@ -157,6 +158,7 @@ public class CharacterOrder : MonoBehaviour
 
             if (duplicateflag == 0)
             {
+                Debug.Log("+上");
                 canMove.Add(nowchecking);
                 Debug.Log("把nowchecking加進去囉" + nowchecking[0] + "   " + nowchecking[1]);
                 mCount.Add(move - 10);
@@ -204,6 +206,7 @@ public class CharacterOrder : MonoBehaviour
 
             if (duplicateflag == 0)
             {
+                Debug.Log("+下");
                 canMove.Add(nowchecking);
                 mCount.Add(move - 10);
                 Debug.Log("成功存取下");
@@ -246,6 +249,7 @@ public class CharacterOrder : MonoBehaviour
 
             if (duplicateflag == 0)
             {
+                Debug.Log("+左");
                 canMove.Add(nowchecking);
                 mCount.Add(move - 10);
             }
@@ -287,6 +291,7 @@ public class CharacterOrder : MonoBehaviour
 
             if (duplicateflag == 0)
             {
+                Debug.Log("+右");
                 canMove.Add(nowchecking);
                 mCount.Add(move - 10);
             }
