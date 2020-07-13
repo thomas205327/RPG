@@ -12,9 +12,11 @@ public class DamageFloatUp : MonoBehaviour
     private Vector3 takeDamageUnit3DPosition;
     private Vector2 takeDamageUnit2DPosition;
     private int updateLock = 0;
+    public static DamageFloatUp Instance;
 
     void Start()
     {
+        Instance = this;
         //turnScript = GameObject.Find("CharacterOrder");         //查找引用
     }
 
@@ -30,6 +32,7 @@ public class DamageFloatUp : MonoBehaviour
         gameObject.GetComponent<Text>().text = "-" + damage;
 
         //延遲銷毀自身
+        gameObject.GetComponent<Text>().enabled = true;
         StartCoroutine("WaitAndDestory");
         updateLock = 1;
     }
@@ -47,7 +50,8 @@ public class DamageFloatUp : MonoBehaviour
     IEnumerator WaitAndDestory()
     {
         yield return new WaitForSeconds(1.5f);
-        Destroy(gameObject);
+        gameObject.GetComponent<Text>().enabled = false;
+        //Destroy(gameObject);
         updateLock = 0;
     }
 }

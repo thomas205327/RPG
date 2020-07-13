@@ -68,19 +68,19 @@ public class CharacterOrder : MonoBehaviour
 
     public void movingdis()
     {
-        List<float[]> enemy = new List<float[]>();
-        List<float[]> partner = new List<float[]>();
-        List<float> mCount = new List<float>();
+        List<float[]> enemy = new List<float[]>();          //敵人
+        List<float[]> partner = new List<float[]>();        //隊友
+        List<float> mCount = new List<float>();             //canMove走到哪一個後剩下幾步可以走 (A能走幾步)
         Character now = characters[0];
-        List<float[]> canMove = new List<float[]>();
+        List<float[]> canMove = new List<float[]>();        //可以移動到哪一格
 
-        List<float> enemydis = new List<float>();
+        List<float> enemydis = new List<float>();           //還沒用到
 
 
 
-        foreach (Character element in characters)
+        foreach (Character element in characters)           //分隊伍
         {
-            if (element.team == 0)
+            if (element.team == 0)                          
             {
                 float[] entry = new float[2];
                 entry[0] = element.pos.x;
@@ -98,9 +98,10 @@ public class CharacterOrder : MonoBehaviour
 
 
         }
-        mCount.Add(now.moveDis);
 
-        float[] temp = new float[2];
+        mCount.Add(now.moveDis);                    //此角色的可移動步數                           
+
+        float[] temp = new float[2];                //此角色的位置          
 
         temp[0] = now.pos.x;
         temp[1] = now.pos.z;
@@ -120,6 +121,7 @@ public class CharacterOrder : MonoBehaviour
             }
 
             //上
+            //Debug.Log("上");
             float duplicateflag = 0;
             float[] nowchecking = new float[2];
             nowchecking[0] = canMove[canMovecount][0];
@@ -156,16 +158,19 @@ public class CharacterOrder : MonoBehaviour
             if (duplicateflag == 0)
             {
                 canMove.Add(nowchecking);
+                Debug.Log("把nowchecking加進去囉" + nowchecking[0] + "   " + nowchecking[1]);
                 mCount.Add(move - 10);
             }
 
 
-
             //下
+            //Debug.Log("下");
             duplicateflag = 0;
             
             nowchecking[0] = canMove[canMovecount][0];
             nowchecking[1] = canMove[canMovecount][1] - 10;
+
+            Debug.Log("X:"+canMove[1][0] + "Z:"+canMove[1][1]);
 
             //檢查是否有敵人
             foreach (float[] element in enemy)
@@ -188,8 +193,10 @@ public class CharacterOrder : MonoBehaviour
             //檢查是否有重複
             foreach (float[] element in canMove)
             {
+                Debug.Log("x:"+element[0] +"z:"+ element[1]);
                 if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
                 {
+                    Debug.Log("移動重複");
                     duplicateflag = 1;
                     break;
                 }
@@ -199,9 +206,11 @@ public class CharacterOrder : MonoBehaviour
             {
                 canMove.Add(nowchecking);
                 mCount.Add(move - 10);
+                Debug.Log("成功存取下");
             }
 
             //左
+            //Debug.Log("左");
             duplicateflag = 0;
             
             nowchecking[0] = canMove[canMovecount][0] - 10;
@@ -242,6 +251,7 @@ public class CharacterOrder : MonoBehaviour
             }
 
             //右
+            //Debug.Log("右");
             duplicateflag = 0;
             
             nowchecking[0] = canMove[canMovecount][0] + 10;
@@ -281,6 +291,7 @@ public class CharacterOrder : MonoBehaviour
                 mCount.Add(move - 10);
             }
 
+            
             canMovecount++;
 
 
