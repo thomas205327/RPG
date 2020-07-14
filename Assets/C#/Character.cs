@@ -48,20 +48,26 @@ public abstract class Character : MonoBehaviour
         GameObject[] planes;
         planes = GameObject.FindGameObjectsWithTag("MovePlane");
 
+        GameObject[] stones;
+        stones = GameObject.FindGameObjectsWithTag("obstacle");
         //劃出可行走位置
         int i;
         for(i=0;i< planes.Length; i++)
         {
             if(Mathf.Round(Math.Abs(planes[i].transform.position.x - pos.x)) + Mathf.Round(Math.Abs(planes[i].transform.position.z - pos.z)) <= dis)
             {
-                
-                planes[i].GetComponent<MeshRenderer>().material.color = Color.blue;
-                //planes[i].GetComponent<CanMovePlane>().moveLock = true;
-                planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                for (i = 0; i < stones.Length; i++)
+                {
+                    if (Mathf.Round(stones[i].transform.position.x) != Mathf.Round(planes[i].transform.position.x) && Mathf.Round(stones[i].transform.position.z) != Mathf.Round(planes[i].transform.position.z))
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.blue;
+                    planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                }
             }
         }
+        
 
-        for (i = 0; i < GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters.Count; i++)
+
+        for (i = 0; i < GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters.Count; i++) //設置角色所在地面
         {
             GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[i].planeSet();
         }

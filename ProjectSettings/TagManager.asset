@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MovePlane
   - menuButton
+  - obstacle
   layers:
   - Default
   - TransparentFX
