@@ -50,17 +50,30 @@ public abstract class Character : MonoBehaviour
 
         GameObject[] stones;
         stones = GameObject.FindGameObjectsWithTag("obstacle");
+        Debug.Log(stones.Length);
         //劃出可行走位置
         int i;
+        int j;
         for(i=0;i< planes.Length; i++)
         {
+            int count = 0;
             if(Mathf.Round(Math.Abs(planes[i].transform.position.x - pos.x)) + Mathf.Round(Math.Abs(planes[i].transform.position.z - pos.z)) <= dis)
             {
-                for (i = 0; i < stones.Length; i++)
+                for (j = 0; j < stones.Length; j++)
                 {
-                    if (Mathf.Round(stones[i].transform.position.x) != Mathf.Round(planes[i].transform.position.x) && Mathf.Round(stones[i].transform.position.z) != Mathf.Round(planes[i].transform.position.z))
+                    if ((Mathf.Round(stones[j].transform.position.x) == Mathf.Round(planes[i].transform.position.x)) && (Mathf.Round(stones[j].transform.position.z) == Mathf.Round(planes[i].transform.position.z)))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        count++;
+                    }
+                    if(count== stones.Length)
+                    {
                         planes[i].GetComponent<MeshRenderer>().material.color = Color.blue;
-                    planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
                 }
             }
         }
