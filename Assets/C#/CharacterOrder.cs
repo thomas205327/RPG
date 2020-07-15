@@ -24,6 +24,9 @@ public class CharacterOrder : MonoBehaviour
         characters.Add(GameObject.Find("Midoriya(Clone)").GetComponent<Character>());
         orderSort();
         planeCharacterChange();
+        canvasController.Instance.characterName.GetComponent<Text>().text = characters[0].characterName;
+        canvasController.Instance.hp.GetComponent<Text>().text = characters[0].hp + "/" + characters[0].hpMax;
+        canvasController.Instance.sp.GetComponent<Text>().text = characters[0].sp + "/" + characters[0].spMax;
     }
 
     void orderSort()
@@ -53,6 +56,10 @@ public class CharacterOrder : MonoBehaviour
         characters.Add(temp);
         orderSort();
         planeCharacterChange();
+
+        canvasController.Instance.characterName.GetComponent<Text>().text = characters[0].characterName;
+        canvasController.Instance.hp.GetComponent<Text>().text = characters[0].hp + "/" + characters[0].hpMax;
+        canvasController.Instance.sp.GetComponent<Text>().text = characters[0].sp + "/" + characters[0].spMax;
     }
 
     public void planeCharacterChange()

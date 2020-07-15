@@ -14,8 +14,12 @@ public class canvasController : MonoBehaviour
     public GameObject item;
     public GameObject end;
     public GameObject backToChar;
+    public GameObject characterName;
+    public GameObject hp;
+    public GameObject sp;
     public Image image;
     public static canvasController Instance;
+
     // Start is called before the first frame update
 
     void Start()
@@ -40,7 +44,9 @@ public class canvasController : MonoBehaviour
         image.enabled = false;
         end.SetActive(false);
         backToChar.SetActive(false);
-
+        characterName.SetActive(false);
+        hp.SetActive(false);
+        sp.SetActive(false);
     }
 
     public void menuShow()
@@ -51,6 +57,9 @@ public class canvasController : MonoBehaviour
         item.SetActive(true);
         image.enabled = true;
         end.SetActive(true);
+        characterName.SetActive(true);
+        hp.SetActive(true);
+        sp.SetActive(true);
         //Debug.Log(Resources.Load<Sprite>(characterOrder.characters[0].image));
         image.GetComponent<Image>().sprite = Resources.Load<Sprite>(characterOrder.characters[0].image);
     }
@@ -111,6 +120,9 @@ public class canvasController : MonoBehaviour
         item.SetActive(false);
         image.enabled = false;
         end.SetActive(false);
+        characterName.SetActive(false);
+        hp.SetActive(false);
+        sp.SetActive(false);
         //Debug.Log(Resources.Load<Sprite>(characterOrder.characters[0].image));
         image.GetComponent<Image>().sprite = Resources.Load<Sprite>(characterOrder.characters[0].image);
 
