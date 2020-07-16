@@ -29,6 +29,10 @@ public class CharacterOrder : MonoBehaviour
         canvasController.Instance.sp.GetComponent<Text>().text = characters[0].sp + "/" + characters[0].spMax;
         GameObject.Find("Main Camera").GetComponent<MainCamera>().CameraReturn();
         GameObject.Find("Image").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[0].image);
+
+        GameObject.Find("orderImage1").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[0].image);
+        GameObject.Find("orderImage2").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[1].image);
+        GameObject.Find("orderImage3").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[2].image);
     }
 
     void orderSort()
@@ -63,7 +67,15 @@ public class CharacterOrder : MonoBehaviour
         canvasController.Instance.hp.GetComponent<Text>().text = characters[0].hp + "/" + characters[0].hpMax;
         canvasController.Instance.sp.GetComponent<Text>().text = characters[0].sp + "/" + characters[0].spMax;
         GameObject.Find("Image").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[0].image);
+
+
+        GameObject.Find("orderImage1").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[0].image);
+        GameObject.Find("orderImage2").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[1].image);
+        GameObject.Find("orderImage3").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[2].image);
+        //GameObject.Find("orderImage4").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[3].image);
+        //GameObject.Find("orderImage5").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[4].image);
     }
+
 
     public void planeCharacterChange()
     {
