@@ -125,8 +125,12 @@ public class CharacterMidoriya : Character
                     //Debug.Log("z要增加");
                     transform.position += new Vector3(0, 0, 1);
                     pos.z = pos.z + 1;
-                    planeSet();
                 }
+                break;
+            case 5:
+                planeSet();
+                GameObject.Find("Main Camera").GetComponent<MainCamera>().CameraReturn();
+
 
                 break;
         }

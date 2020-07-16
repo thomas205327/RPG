@@ -105,7 +105,7 @@ public class CharacterFuze : Character
                     //Debug.Log("z要減少");
                     if (pos.z <= moveToZ)
                     {
-                        moveLock = 0;
+                        moveLock = 5;
                         clearDisplay();                 //移動完清除藍色地板
                         GameObject.Find("Canvas").GetComponent<canvasController>().move.GetComponent<Button>().interactable = false;
                         break;
@@ -117,7 +117,7 @@ public class CharacterFuze : Character
                 {
                     if (pos.z >= moveToZ)
                     {
-                        moveLock = 0;
+                        moveLock = 5;
                         clearDisplay();                 //移動完清除藍色地板
                         GameObject.Find("Canvas").GetComponent<canvasController>().move.GetComponent<Button>().interactable = false;
                         break;
@@ -125,8 +125,13 @@ public class CharacterFuze : Character
                     //Debug.Log("z要增加");
                     transform.position += new Vector3(0, 0, 1);
                     pos.z = pos.z + 1;
-                    planeSet();
                 }
+                break;
+            case 5:
+                planeSet();
+                Debug.Log("要改鏡頭");
+                GameObject.Find("Main Camera").GetComponent<MainCamera>().CameraReturn();
+                
                 
                 break;
         }

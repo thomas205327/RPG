@@ -31,22 +31,15 @@ public class canvasController : MonoBehaviour
         item.GetComponent<Button>().onClick.AddListener(itemOnclick);
         end.GetComponent<Button>().onClick.AddListener(endOnclick);
         backToChar.GetComponent<Button>().onClick.AddListener(backToCharOnclick);
+        
     }
 
     void Awake()
     {
         image.GetComponent<Image>().sprite = Resources.Load<Sprite>("white");
         //image = GetComponent<Image>();
-        move.SetActive(false);
-        attack.SetActive(false);
-        skill.SetActive(false);
-        item.SetActive(false);
-        image.enabled = false;
-        end.SetActive(false);
         backToChar.SetActive(false);
-        characterName.SetActive(false);
-        hp.SetActive(false);
-        sp.SetActive(false);
+        
     }
 
     public void menuShow()

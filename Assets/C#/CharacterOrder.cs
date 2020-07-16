@@ -27,6 +27,8 @@ public class CharacterOrder : MonoBehaviour
         canvasController.Instance.characterName.GetComponent<Text>().text = characters[0].characterName;
         canvasController.Instance.hp.GetComponent<Text>().text = characters[0].hp + "/" + characters[0].hpMax;
         canvasController.Instance.sp.GetComponent<Text>().text = characters[0].sp + "/" + characters[0].spMax;
+        GameObject.Find("Main Camera").GetComponent<MainCamera>().CameraReturn();
+        GameObject.Find("Image").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[0].image);
     }
 
     void orderSort()
@@ -60,6 +62,7 @@ public class CharacterOrder : MonoBehaviour
         canvasController.Instance.characterName.GetComponent<Text>().text = characters[0].characterName;
         canvasController.Instance.hp.GetComponent<Text>().text = characters[0].hp + "/" + characters[0].hpMax;
         canvasController.Instance.sp.GetComponent<Text>().text = characters[0].sp + "/" + characters[0].spMax;
+        GameObject.Find("Image").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[0].image);
     }
 
     public void planeCharacterChange()
