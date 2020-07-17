@@ -103,7 +103,7 @@ public class CharacterOrder : MonoBehaviour
 
         foreach (Character element in characters)           //分隊伍
         {
-            if (element.team == 0)                          
+            if (element.team == now.team)                          
             {
                 float[] entry = new float[2];
                 entry[0] = element.pos.x;
