@@ -184,15 +184,17 @@ public class CharacterOrder : MonoBehaviour
                 canMove.Add(nowchecking);
                 Debug.Log("把nowchecking加進去囉" + nowchecking[0] + "   " + nowchecking[1]);
                 mCount.Add(move - 10);
+                Debug.Log("canMove上" + canMove[1][0] + "   " + canMove[1][1]);
             }
 
 
             //下
             //Debug.Log("下");
             duplicateflag = 0;
-            
+            nowchecking = new float[2];
             nowchecking[0] = canMove[canMovecount][0];
             nowchecking[1] = canMove[canMovecount][1] - 10;
+            Debug.Log("canMove下" + canMove[1][0] + "   " + canMove[1][1]);
 
             Debug.Log("X:"+canMove[1][0] + "Z:"+canMove[1][1]);
 
@@ -230,6 +232,7 @@ public class CharacterOrder : MonoBehaviour
             {
                 Debug.Log("+下");
                 canMove.Add(nowchecking);
+                
                 mCount.Add(move - 10);
                 Debug.Log("成功存取下");
             }
@@ -237,7 +240,7 @@ public class CharacterOrder : MonoBehaviour
             //左
             //Debug.Log("左");
             duplicateflag = 0;
-            
+            nowchecking = new float[2];
             nowchecking[0] = canMove[canMovecount][0] - 10;
             nowchecking[1] = canMove[canMovecount][1];
 
@@ -279,7 +282,7 @@ public class CharacterOrder : MonoBehaviour
             //右
             //Debug.Log("右");
             duplicateflag = 0;
-            
+            nowchecking = new float[2];
             nowchecking[0] = canMove[canMovecount][0] + 10;
             nowchecking[1] = canMove[canMovecount][1];
 
@@ -395,10 +398,11 @@ public class CharacterOrder : MonoBehaviour
                     n = mCount[index];
                 }
             }
-            
+
 
 
             //下
+            temp2 = new float[2];
             temp2[0] = shortest[0] - 10;
             temp2[1] = shortest[1];
 
@@ -423,10 +427,11 @@ public class CharacterOrder : MonoBehaviour
                 }
             }
 
-            
+
 
 
             //左
+            temp2 = new float[2];
             temp2[0] = shortest[0];
             temp2[1] = shortest[1] - 10;
 
@@ -451,10 +456,11 @@ public class CharacterOrder : MonoBehaviour
                 }
             }
 
-            
+
 
 
             //右
+            temp2 = new float[2];
             temp2[0] = shortest[0];
             temp2[1] = shortest[1] + 10;
 
