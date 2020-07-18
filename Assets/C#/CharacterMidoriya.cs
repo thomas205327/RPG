@@ -130,7 +130,7 @@ public class CharacterMidoriya : Character
             case 5:
                 planeSet();
                 GameObject.Find("Main Camera").GetComponent<MainCamera>().CameraReturn();
-
+                moveLock = 0;
 
                 break;
         }

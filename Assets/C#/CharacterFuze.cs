@@ -131,8 +131,8 @@ public class CharacterFuze : Character
                 planeSet();
                 Debug.Log("要改鏡頭");
                 GameObject.Find("Main Camera").GetComponent<MainCamera>().CameraReturn();
-                
-                
+                moveLock = 0;
+
                 break;
         }
     }
