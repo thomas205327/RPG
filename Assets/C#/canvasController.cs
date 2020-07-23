@@ -17,7 +17,11 @@ public class canvasController : MonoBehaviour
     public GameObject characterName;
     public GameObject hp;
     public GameObject sp;
+    public GameObject enemyName;
+    public GameObject enemyHp;
+    public GameObject enemySp;
     public Image image;
+    public Image enemyImage;
     public static canvasController Instance;
 
     // Start is called before the first frame update
@@ -37,9 +41,13 @@ public class canvasController : MonoBehaviour
     void Awake()
     {
         image.GetComponent<Image>().sprite = Resources.Load<Sprite>("white");
-        //image = GetComponent<Image>();
-        backToChar.SetActive(false);
+        enemyImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("white");
         
+        backToChar.SetActive(false);
+        enemyName.SetActive(false);
+        enemyHp.SetActive(false);
+        enemySp.SetActive(false);
+        enemyImage.enabled = false;
     }
 
     public void menuShow()

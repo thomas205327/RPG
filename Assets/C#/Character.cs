@@ -129,6 +129,11 @@ public abstract class Character : MonoBehaviour
     {
         Obj1.hp = Obj1.hp - (STR - Obj1.DEF);
         Debug.Log(Obj1.name+"已受到"+ (STR - Obj1.DEF) +"點攻擊");
+
+        canvasController.Instance.enemyName.GetComponent<Text>().text = Obj1.characterName;
+        canvasController.Instance.enemyHp.GetComponent<Text>().text = Obj1.hp + "/" + Obj1.hpMax;
+        canvasController.Instance.enemySp.GetComponent<Text>().text = Obj1.sp + "/" + Obj1.spMax;
+
         damageFloatUp.GetComponent<DamageFloatUp>().beAttack(Obj1, (STR - Obj1.DEF));
         clearDisplay();                 //攻擊完清除藍色地板
         GameObject.Find("Canvas").GetComponent<canvasController>().attack.GetComponent<Button>().interactable = false;
@@ -153,6 +158,28 @@ public abstract class Character : MonoBehaviour
 
     }
 
+    private void OnMouseEnter()
+    {
+        if (plane.GetComponent<MeshRenderer>().material.color == Color.red &&
+            GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[0] != this)
+        {
+            canvasController.Instance.enemyName.GetComponent<Text>().text = characterName;
+            canvasController.Instance.enemyHp.GetComponent<Text>().text = hp + "/" + hpMax;
+            canvasController.Instance.enemySp.GetComponent<Text>().text = sp + "/" + spMax;
+            canvasController.Instance.enemyImage.GetComponent<Image>().sprite = Resources.Load<Sprite>(image);
+            canvasController.Instance.enemyName.SetActive(true);
+            canvasController.Instance.enemyHp.SetActive(true);
+            canvasController.Instance.enemySp.SetActive(true);
+            canvasController.Instance.enemyImage.enabled = true;
+        }
+    }
 
+    private void OnMouseExit()
+    {
+        canvasController.Instance.enemyName.SetActive(false);
+        canvasController.Instance.enemyHp.SetActive(false);
+        canvasController.Instance.enemySp.SetActive(false);
+        canvasController.Instance.enemyImage.enabled = false;
+    }
 
 }
