@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-
 public class CharacterOrder : MonoBehaviour
 {
     public List<Character> characters;
@@ -99,6 +98,35 @@ public class CharacterOrder : MonoBehaviour
 
         List<float> enemydis = new List<float>();           //還沒用到
 
+        List<float[]> obs = new List<float[]>();          //敵人
+
+        
+
+
+        GameObject[] gos;                               //障礙
+        gos = GameObject.FindGameObjectsWithTag("obstacle");
+
+        foreach (GameObject element in gos)
+        {
+            
+
+
+            float[] entry = new float[2];
+            entry[0] = Mathf.Round(element.transform.position.x);
+            entry[1] = Mathf.Round(element.transform.position.z);
+            obs.Add(entry);
+        }
+
+        foreach(float[] ele in obs)
+        {
+            Debug.Log(ele[0]+","+ele[1]);
+        }
+
+
+
+
+
+
 
 
         foreach (Character element in characters)           //分隊伍
@@ -177,14 +205,27 @@ public class CharacterOrder : MonoBehaviour
                     break;
                 }
             }
+            //檢查是否有障礙
+            foreach (float[] element in obs)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+
+
+
+
 
             if (duplicateflag == 0)
             {
-                Debug.Log("+上");
+                //Debug.Log("+上");
                 canMove.Add(nowchecking);
-                Debug.Log("把nowchecking加進去囉" + nowchecking[0] + "   " + nowchecking[1]);
+                //Debug.Log("把nowchecking加進去囉" + nowchecking[0] + "   " + nowchecking[1]);
                 mCount.Add(move - 10);
-                Debug.Log("canMove上" + canMove[1][0] + "   " + canMove[1][1]);
+                //Debug.Log("canMove上" + canMove[1][0] + "   " + canMove[1][1]);
             }
 
 
@@ -194,9 +235,9 @@ public class CharacterOrder : MonoBehaviour
             nowchecking = new float[2];
             nowchecking[0] = canMove[canMovecount][0];
             nowchecking[1] = canMove[canMovecount][1] - 10;
-            Debug.Log("canMove下" + canMove[1][0] + "   " + canMove[1][1]);
+            //Debug.Log("canMove下" + canMove[1][0] + "   " + canMove[1][1]);
 
-            Debug.Log("X:"+canMove[1][0] + "Z:"+canMove[1][1]);
+            //Debug.Log("X:"+canMove[1][0] + "Z:"+canMove[1][1]);
 
             //檢查是否有敵人
             foreach (float[] element in enemy)
@@ -219,10 +260,19 @@ public class CharacterOrder : MonoBehaviour
             //檢查是否有重複
             foreach (float[] element in canMove)
             {
-                Debug.Log("x:"+element[0] +"z:"+ element[1]);
+                //Debug.Log("x:"+element[0] +"z:"+ element[1]);
                 if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
                 {
-                    Debug.Log("移動重複");
+                    //Debug.Log("移動重複");
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有障礙
+            foreach (float[] element in obs)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
                     duplicateflag = 1;
                     break;
                 }
@@ -230,11 +280,11 @@ public class CharacterOrder : MonoBehaviour
 
             if (duplicateflag == 0)
             {
-                Debug.Log("+下");
+                //Debug.Log("+下");
                 canMove.Add(nowchecking);
                 
                 mCount.Add(move - 10);
-                Debug.Log("成功存取下");
+                //Debug.Log("成功存取下");
             }
 
             //左
@@ -271,10 +321,19 @@ public class CharacterOrder : MonoBehaviour
                     break;
                 }
             }
+            //檢查是否有障礙
+            foreach (float[] element in obs)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
 
             if (duplicateflag == 0)
             {
-                Debug.Log("+左");
+                //Debug.Log("+左");
                 canMove.Add(nowchecking);
                 mCount.Add(move - 10);
             }
@@ -313,10 +372,19 @@ public class CharacterOrder : MonoBehaviour
                     break;
                 }
             }
+            //檢查是否有障礙
+            foreach (float[] element in obs)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
 
             if (duplicateflag == 0)
             {
-                Debug.Log("+右");
+                //Debug.Log("+右");
                 canMove.Add(nowchecking);
                 mCount.Add(move - 10);
             }
@@ -360,9 +428,9 @@ public class CharacterOrder : MonoBehaviour
             }
         }
 
-        Debug.Log(shortest[0]);
-        Debug.Log(shortest[1]);
-        Debug.Log(enemyindis);
+        //Debug.Log(shortest[0]);
+        //Debug.Log(shortest[1]);
+        //Debug.Log(enemyindis);
 
 
 
@@ -530,7 +598,7 @@ public class CharacterOrder : MonoBehaviour
 
             foreach (float[] e in canMove)
             {
-                Debug.Log(e[0]+","+ e[1]);
+                //Debug.Log(e[0]+","+ e[1]);
             }
 
 
@@ -541,6 +609,58 @@ public class CharacterOrder : MonoBehaviour
 
 
         
+
+
+
+    }
+
+    public void checkend()
+    {
+        List<Character> team0 = new List<Character>();          
+        List<Character> team1 = new List<Character>();
+
+        foreach (Character element in characters)
+        {
+            if (element.team==0)
+            {
+                team0.Add(element);
+            }
+            else
+            {
+                team1.Add(element);
+            }
+        }
+        int loseflag = 1;
+        foreach (Character element in team0)
+        {
+
+            if (element.hp > 0)
+            {
+                loseflag = 0;
+                break;
+            }
+        }
+        int winflag = 1;
+        foreach (Character element in team1)
+        {
+
+            if (element.hp > 0)
+            {
+                winflag = 0;
+                break;
+            }
+        }
+        if (loseflag == 1)
+        {
+            //輸了
+        }
+        if (winflag == 1)
+        {
+            //贏了
+        }
+
+
+
 
 
 
