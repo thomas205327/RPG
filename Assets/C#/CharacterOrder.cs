@@ -7,6 +7,7 @@ using System;
 public class CharacterOrder : MonoBehaviour
 {
     public List<Character> characters;
+    public GameObject[] order;
 
     void Awake()
     {
@@ -29,9 +30,23 @@ public class CharacterOrder : MonoBehaviour
         GameObject.Find("Main Camera").GetComponent<MainCamera>().CameraReturn();
         GameObject.Find("Image").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[0].image);
 
-        GameObject.Find("orderImage1").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[0].image);
-        GameObject.Find("orderImage2").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[1].image);
-        GameObject.Find("orderImage3").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[2].image);
+
+        order = GameObject.FindGameObjectsWithTag("order");
+        int i;
+        for (i = 0; i < order.Length; i++)
+        {
+            order[i].SetActive(false);
+        }
+
+        for (i = 0; i < order.Length; i++)
+        {
+            order[i].SetActive(true);
+            order[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[i].image);
+            if (characters.Count == i + 1)
+            {
+                break;
+            }
+        }
     }
 
     void orderSort()
@@ -67,12 +82,23 @@ public class CharacterOrder : MonoBehaviour
         canvasController.Instance.sp.GetComponent<Text>().text = characters[0].sp + "/" + characters[0].spMax;
         GameObject.Find("Image").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[0].image);
 
+        int i;
+        for (i = 0; i < order.Length; i++)              //都先看不到
+        {
+            order[i].SetActive(false);
+        }
+        Debug.Log(order.Length);
+        Debug.Log(characters.Count);
+        for (i = 0; i < order.Length; i++)              //有角色的order才顯示
+        {
+            order[i].SetActive(true);
+            order[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[i].image);
+            if (characters.Count == i + 1)
+            {
+                break;
+            }
+        }
 
-        GameObject.Find("orderImage1").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[0].image);
-        GameObject.Find("orderImage2").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[1].image);
-        GameObject.Find("orderImage3").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[2].image);
-        //GameObject.Find("orderImage4").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[3].image);
-        //GameObject.Find("orderImage5").GetComponent<Image>().sprite = Resources.Load<Sprite>(characters[4].image);
     }
 
 
