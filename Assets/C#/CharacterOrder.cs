@@ -10,7 +10,7 @@ public class CharacterOrder : MonoBehaviour
 
     void Awake()
     {
-        Instantiate(Resources.Load("Kirito"), new Vector3(0, 3.5f, 0), new Quaternion(0, 90, 0, 0));
+        Instantiate(Resources.Load("Kirito"), new Vector3(0, 1.5f, 0), new Quaternion(0, 90, 0, 0));
         Instantiate(Resources.Load("Fuze"), new Vector3(10f, 3.5f, 30f), new Quaternion(0, 90, 0, 0));
         Instantiate(Resources.Load("Midoriya"), new Vector3(-30f, 3.5f, 0), new Quaternion(0, 90, 0, 0));
     }
