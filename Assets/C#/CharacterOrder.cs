@@ -87,8 +87,8 @@ public class CharacterOrder : MonoBehaviour
         {
             order[i].SetActive(false);
         }
-        Debug.Log(order.Length);
-        Debug.Log(characters.Count);
+        //Debug.Log(order.Length);
+        //Debug.Log(characters.Count);
         for (i = 0; i < order.Length; i++)              //有角色的order才顯示
         {
             order[i].SetActive(true);
@@ -143,10 +143,7 @@ public class CharacterOrder : MonoBehaviour
             obs.Add(entry);
         }
 
-        foreach(float[] ele in obs)
-        {
-            Debug.Log(ele[0]+","+ele[1]);
-        }
+        
 
 
 
@@ -448,7 +445,11 @@ public class CharacterOrder : MonoBehaviour
         int enemyindis = 0;
         foreach (float[] e in canMove)
         {
-            if (e[0] == shortest[0] && e[1] == shortest[1])
+            if ((e[0] == shortest[0]+10 || e[0] == shortest[0]-10) && e[1] == shortest[1])
+            {
+                enemyindis = 1;
+            }
+            else if ((e[1] == shortest[1] + 10 || e[1] == shortest[1] - 10) && e[0] == shortest[0])
             {
                 enemyindis = 1;
             }
@@ -583,12 +584,17 @@ public class CharacterOrder : MonoBehaviour
 
             foreach(Character e in characters)
             {
+
+                Debug.Log("最近敵人"+shortest[0]+","+ shortest[1]);
+
+
                 if(e.pos.x == shortest[0] && e.pos.z == shortest[1])
                 {
+
                     now.attack(e);
                     GameObject ending = GameObject.Find("Canvas");
                     ending.GetComponent<canvasController>().endOnclick();
-                    
+
                 }
             }
 
@@ -631,6 +637,8 @@ public class CharacterOrder : MonoBehaviour
                 
 
             now.move(nearest[0], nearest[1]);
+            GameObject ending = GameObject.Find("Canvas");
+            ending.GetComponent<canvasController>().endOnclick();
         }
 
 

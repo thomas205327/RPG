@@ -50,7 +50,7 @@ public abstract class Character : MonoBehaviour
 
         GameObject[] stones;
         stones = GameObject.FindGameObjectsWithTag("obstacle");
-        Debug.Log(stones.Length);
+        //Debug.Log(stones.Length);
         //劃出可行走位置
         int i;
         int j;

@@ -61,7 +61,7 @@ public class canvasController : MonoBehaviour
         characterName.SetActive(true);
         hp.SetActive(true);
         sp.SetActive(true);
-        //Debug.Log(Resources.Load<Sprite>(characterOrder.characters[0].image));
+        ////Debug.Log(Resources.Load<Sprite>(characterOrder.characters[0].image));
         image.GetComponent<Image>().sprite = Resources.Load<Sprite>(characterOrder.characters[0].image);
     }
     // Update is called once per frame
@@ -72,21 +72,21 @@ public class canvasController : MonoBehaviour
 
     public void moveOnclick()
     {
-        Debug.Log("移動");
+        //Debug.Log("移動");
         Character Obj1 = characterOrder.characters[0];
         Obj1.moveDisplay(Obj1.moveDis);
     }
 
     public void attackOnclick()
     {
-        Debug.Log("攻擊");
+        //Debug.Log("攻擊");
         Character Obj1 = characterOrder.characters[0];
         Obj1.attackDisplay(Obj1.attackDis);
     }
 
     public void skillOnclick()
     {
-        Debug.Log("技能");
+        //Debug.Log("技能");
         Character Obj1 = characterOrder.characters[0];
         GameObject Order = GameObject.Find("CharacterOrder");
         Order.GetComponent<CharacterOrder>().movingdis();
@@ -94,14 +94,14 @@ public class canvasController : MonoBehaviour
 
     public void itemOnclick()
     {
-        Debug.Log("道具");
+        //Debug.Log("道具");
         Character Obj1 = characterOrder.characters[0];
         Obj1.moveDisplay(Obj1.moveDis);
     }
 
     public void endOnclick()
     {
-        Debug.Log("結束");
+        //Debug.Log("結束");
         Character Obj1 = characterOrder.characters[0];
         Obj1.clearDisplay();
         characterOrder.orderChange();
@@ -124,7 +124,7 @@ public class canvasController : MonoBehaviour
         characterName.SetActive(false);
         hp.SetActive(false);
         sp.SetActive(false);
-        //Debug.Log(Resources.Load<Sprite>(characterOrder.characters[0].image));
+        ////Debug.Log(Resources.Load<Sprite>(characterOrder.characters[0].image));
         image.GetComponent<Image>().sprite = Resources.Load<Sprite>(characterOrder.characters[0].image);
 
     }
