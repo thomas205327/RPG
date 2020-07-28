@@ -10,17 +10,17 @@ public class CharacterFuze : Character
     int moveToZ;
     void Awake()
     {
-        Vector3 move = new Vector3(10f, 3.5f, 30f);
+        Vector3 move = new Vector3(170f, 3.5f, 10f);
         pos = move;
-        moveDis = 30;
-        hp = 100;
-        hpMax = 100;
+        moveDis = 20;
+        hp = 80;
+        hpMax = 80;
         sp = 50;
         spMax = 50;
         speed = 0;
         actionValue = 40;
         actionValueMax = 40;
-        attackDis = 10;
+        attackDis = 20;
         characterName = "Fuze";
         image = "Fuze";
         moveLock = 0;
@@ -28,7 +28,7 @@ public class CharacterFuze : Character
         INT = 10;
         DEF = 5;
         RES = 10;
-        team = 1;
+        team = 0;
         GetComponent<Character>().damageFloatUp = GameObject.Find("damage");
     }
 

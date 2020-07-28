@@ -3,31 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CharacterKirito : Character
+public class CharacterYuzio : Character
 {
     int rotate = 0;
     int moveToX;
     int moveToZ;
     void Awake()
     {
-        Vector3 move = new Vector3(170f, 3.5f, -10f);
+        Vector3 move = new Vector3(170f, 3.5f, 0);
         pos = move;
-        moveDis = 40;
-        hp = 100;
-        hpMax = 100;
+        moveDis = 30;
+        hp = 120;
+        hpMax = 120;
         sp = 50;
         spMax = 50;
         speed = 0;
         actionValue = 50;
         actionValueMax = 50;
         attackDis = 10;
-        characterName = "桐人";
-        image = "Sword Art Online II - 20[01-32-37]";
+        characterName = "尤吉歐";
+        image = "maxresdefault";
         moveLock = 0;
-        STR = 30;
-        INT = 10;
+        STR = 25;
+        INT = 0;
         DEF = 10;
-        RES = 10;
+        RES = 0;
         team = 0;
         GetComponent<Character>().damageFloatUp = GameObject.Find("damage");
     }
@@ -136,7 +136,8 @@ public class CharacterKirito : Character
         }
     }
 
-    void OnMouseDown(){
+    void OnMouseDown()
+    {
         if (plane.GetComponent<MeshRenderer>().material.color == Color.red &&
             GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[0] != this)
         {

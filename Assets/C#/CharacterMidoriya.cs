@@ -10,11 +10,11 @@ public class CharacterMidoriya : Character
     int moveToZ;
     void Awake()
     {
-        Vector3 move = new Vector3(-30f, 3.5f, 0);
+        Vector3 move = new Vector3(-40f, 3.5f, 0);
         pos = move;
-        moveDis = 30;
-        hp = 80;
-        hpMax = 80;
+        moveDis = 20;
+        hp = 60;
+        hpMax = 60;
         sp = 50;
         spMax = 50;
         speed = 0;
@@ -28,7 +28,7 @@ public class CharacterMidoriya : Character
         INT = 0;
         DEF = 0;
         RES = 0;
-        team = 0;
+        team = 1;
         GetComponent<Character>().damageFloatUp = GameObject.Find("damage");
     }
 

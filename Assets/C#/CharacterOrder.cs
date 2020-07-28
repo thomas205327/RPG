@@ -11,9 +11,12 @@ public class CharacterOrder : MonoBehaviour
 
     void Awake()
     {
-        Instantiate(Resources.Load("Kirito"), new Vector3(0, 1.5f, 0), new Quaternion(0, 90, 0, 0));
-        Instantiate(Resources.Load("Fuze"), new Vector3(10f, 3.5f, 30f), new Quaternion(0, 90, 0, 0));
-        Instantiate(Resources.Load("Midoriya"), new Vector3(-30f, 3.5f, 0), new Quaternion(0, 90, 0, 0));
+        Instantiate(Resources.Load("Kirito"), new Vector3(170f, 1.5f, -10f), new Quaternion(0, 90, 0, 0));
+        Instantiate(Resources.Load("Fuze"), new Vector3(170f, 3.5f, 10f), new Quaternion(0, 90, 0, 0));
+        Instantiate(Resources.Load("Midoriya"), new Vector3(-40f, 3.5f, 0), new Quaternion(0, 90, 0, 0));
+        Instantiate(Resources.Load("Yuzio"), new Vector3(170f, 6f, 0), new Quaternion(0, 90, 0, 0));
+        Instantiate(Resources.Load("Bakugou"), new Vector3(-40f, 3.5f, 10f), new Quaternion(0, 90, 0, 0));
+        Instantiate(Resources.Load("Tanjiro"), new Vector3(-40f, 3.5f, -10f), new Quaternion(0, 90, 0, 0));
     }
 
     // Start is called before the first frame update
@@ -22,6 +25,9 @@ public class CharacterOrder : MonoBehaviour
         characters.Add(GameObject.Find("Kirito(Clone)").GetComponent<Character>());
         characters.Add(GameObject.Find("Fuze(Clone)").GetComponent<Character>());
         characters.Add(GameObject.Find("Midoriya(Clone)").GetComponent<Character>());
+        characters.Add(GameObject.Find("Yuzio(Clone)").GetComponent<Character>());
+        characters.Add(GameObject.Find("Bakugou(Clone)").GetComponent<Character>());
+        characters.Add(GameObject.Find("Tanjiro(Clone)").GetComponent<Character>());
         orderSort();
         planeCharacterChange();
         canvasController.Instance.characterName.GetComponent<Text>().text = characters[0].characterName;
@@ -648,7 +654,7 @@ public class CharacterOrder : MonoBehaviour
 
     }
 
-    public void checkend()
+    public void checkEnd()
     {
         List<Character> team0 = new List<Character>();          
         List<Character> team1 = new List<Character>();
@@ -664,6 +670,7 @@ public class CharacterOrder : MonoBehaviour
                 team1.Add(element);
             }
         }
+
         int loseflag = 1;
         foreach (Character element in team0)
         {
@@ -674,6 +681,7 @@ public class CharacterOrder : MonoBehaviour
                 break;
             }
         }
+
         int winflag = 1;
         foreach (Character element in team1)
         {
@@ -692,18 +700,5 @@ public class CharacterOrder : MonoBehaviour
         {
             //贏了
         }
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
 }

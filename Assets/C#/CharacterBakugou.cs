@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CharacterKirito : Character
+public class CharacterBakugou : Character
 {
     int rotate = 0;
     int moveToX;
     int moveToZ;
     void Awake()
     {
-        Vector3 move = new Vector3(170f, 3.5f, -10f);
+        Vector3 move = new Vector3(-40f, 3.5f, 10f);
         pos = move;
         moveDis = 40;
         hp = 100;
@@ -21,14 +21,14 @@ public class CharacterKirito : Character
         actionValue = 50;
         actionValueMax = 50;
         attackDis = 10;
-        characterName = "桐人";
-        image = "Sword Art Online II - 20[01-32-37]";
+        characterName = "爆豪";
+        image = "img_5df1f68fcd5d0";
         moveLock = 0;
         STR = 30;
-        INT = 10;
-        DEF = 10;
-        RES = 10;
-        team = 0;
+        INT = 0;
+        DEF = 15;
+        RES = 0;
+        team = 1;
         GetComponent<Character>().damageFloatUp = GameObject.Find("damage");
     }
 
@@ -136,7 +136,8 @@ public class CharacterKirito : Character
         }
     }
 
-    void OnMouseDown(){
+    void OnMouseDown()
+    {
         if (plane.GetComponent<MeshRenderer>().material.color == Color.red &&
             GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[0] != this)
         {
