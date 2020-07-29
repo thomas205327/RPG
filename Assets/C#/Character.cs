@@ -137,6 +137,14 @@ public abstract class Character : MonoBehaviour
         damageFloatUp.GetComponent<DamageFloatUp>().beAttack(Obj1, (STR - Obj1.DEF));
         clearDisplay();                 //攻擊完清除藍色地板
         GameObject.Find("Canvas").GetComponent<canvasController>().attack.GetComponent<Button>().interactable = false;
+
+        if (Obj1.hp <= 0)
+        {
+            GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters.Remove(Obj1);
+            Obj1.gameObject.SetActive(false);
+        }
+
+        GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().checkEnd();
     }
 
     public virtual void move(float x, float z)

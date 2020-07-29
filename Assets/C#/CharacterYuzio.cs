@@ -47,6 +47,7 @@ public class CharacterYuzio : Character
         moveLock = 1;
         moveToX = (int)x;
         moveToZ = (int)z;
+        GameObject.Find("Canvas").GetComponent<canvasController>().move.GetComponent<Button>().interactable = false;
     }
 
     // Update is called once per frame
@@ -107,7 +108,7 @@ public class CharacterYuzio : Character
                     {
                         moveLock = 0;
                         clearDisplay();                 //移動完清除藍色地板
-                        GameObject.Find("Canvas").GetComponent<canvasController>().move.GetComponent<Button>().interactable = false;
+                        //GameObject.Find("Canvas").GetComponent<canvasController>().move.GetComponent<Button>().interactable = false;
                         break;
                     }
                     transform.position += new Vector3(0, 0, -1);
@@ -119,7 +120,7 @@ public class CharacterYuzio : Character
                     {
                         moveLock = 0;
                         clearDisplay();                 //移動完清除藍色地板
-                        GameObject.Find("Canvas").GetComponent<canvasController>().move.GetComponent<Button>().interactable = false;
+                        //GameObject.Find("Canvas").GetComponent<canvasController>().move.GetComponent<Button>().interactable = false;
                         break;
                     }
                     //Debug.Log("z要增加");

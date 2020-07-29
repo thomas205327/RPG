@@ -23,6 +23,7 @@ public class canvasController : MonoBehaviour
     public Image image;
     public Image enemyImage;
     public static canvasController Instance;
+    public Text text;
 
     // Start is called before the first frame update
 
@@ -48,6 +49,7 @@ public class canvasController : MonoBehaviour
         enemyHp.SetActive(false);
         enemySp.SetActive(false);
         enemyImage.enabled = false;
+        text.enabled = false;
     }
 
     public void menuShow()

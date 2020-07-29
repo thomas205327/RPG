@@ -695,10 +695,14 @@ public class CharacterOrder : MonoBehaviour
         if (loseflag == 1)
         {
             //輸了
+            canvasController.Instance.text.enabled = true;
+            canvasController.Instance.text.GetComponent<Text>().text = "敗北";
         }
         if (winflag == 1)
         {
             //贏了
+            canvasController.Instance.text.enabled = true;
+            canvasController.Instance.text.GetComponent<Text>().text = "勝利";
         }
     }
 }
