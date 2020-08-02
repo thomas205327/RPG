@@ -104,7 +104,10 @@ public class CharacterOrder : MonoBehaviour
                 break;
             }
         }
-
+        if (characters[0].team == 1)
+        {
+            movingdis();
+        }
     }
 
 
