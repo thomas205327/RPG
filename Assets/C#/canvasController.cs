@@ -107,13 +107,6 @@ public class canvasController : MonoBehaviour
         Character Obj1 = characterOrder.characters[0];
         Obj1.clearDisplay();
         characterOrder.orderChange();
-        move.GetComponent<Button>().interactable = true;
-        attack.GetComponent<Button>().interactable = true;
-        skill.GetComponent<Button>().interactable = true;
-        item.GetComponent<Button>().interactable = true;
-
-       GameObject.Find("Main Camera").GetComponent<MainCamera>().CameraReturn();
-
     }
 
     public void menuHide() {

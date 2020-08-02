@@ -104,9 +104,19 @@ public class CharacterOrder : MonoBehaviour
                 break;
             }
         }
+        GameObject.Find("Main Camera").GetComponent<MainCamera>().CameraReturn();
         if (characters[0].team == 1)
         {
-            movingdis();
+            canvasController.Instance.menuHide();
+            Invoke("movingdis", 2f);
+        }
+        else
+        {
+            canvasController.Instance.menuShow();
+            canvasController.Instance.move.GetComponent<Button>().interactable = true;
+            canvasController.Instance.attack.GetComponent<Button>().interactable = true;
+            canvasController.Instance.skill.GetComponent<Button>().interactable = true;
+            canvasController.Instance.item.GetComponent<Button>().interactable = true;
         }
     }
 
@@ -647,14 +657,9 @@ public class CharacterOrder : MonoBehaviour
 
             now.move(nearest[0], nearest[1]);
             GameObject ending = GameObject.Find("Canvas");
+            //Invoke("print", 2f);
             ending.GetComponent<canvasController>().endOnclick();
         }
-
-
-        
-
-
-
     }
 
     public void checkEnd()

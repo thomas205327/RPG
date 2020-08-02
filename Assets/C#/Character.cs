@@ -195,7 +195,7 @@ public abstract class Character : MonoBehaviour
         List<float[]> enemy = new List<float[]>();          //敵人
         List<float[]> partner = new List<float[]>();        //隊友
         List<float> mCount = new List<float>();             //canMove走到哪一個後剩下幾步可以走 (A能走幾步)
-        Character now = characters[0];
+        Character now = GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[0];
         List<float[]> canMove = new List<float[]>();        //可以移動到哪一格
 
         List<float> enemydis = new List<float>();           //還沒用到
@@ -228,7 +228,7 @@ public abstract class Character : MonoBehaviour
 
 
 
-        foreach (Character element in characters)           //分隊伍
+        foreach (Character element in GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters)           //分隊伍
         {
             if (element.team == now.team)
             {
