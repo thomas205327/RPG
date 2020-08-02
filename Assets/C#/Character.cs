@@ -190,4 +190,324 @@ public abstract class Character : MonoBehaviour
         canvasController.Instance.enemyImage.enabled = false;
     }
 
+    private void movebutt()
+    {
+        List<float[]> enemy = new List<float[]>();          //敵人
+        List<float[]> partner = new List<float[]>();        //隊友
+        List<float> mCount = new List<float>();             //canMove走到哪一個後剩下幾步可以走 (A能走幾步)
+        Character now = characters[0];
+        List<float[]> canMove = new List<float[]>();        //可以移動到哪一格
+
+        List<float> enemydis = new List<float>();           //還沒用到
+
+        List<float[]> obs = new List<float[]>();          //敵人
+
+
+
+
+        GameObject[] gos;                               //障礙
+        gos = GameObject.FindGameObjectsWithTag("obstacle");
+
+        foreach (GameObject element in gos)
+        {
+
+
+
+            float[] entry = new float[2];
+            entry[0] = Mathf.Round(element.transform.position.x);
+            entry[1] = Mathf.Round(element.transform.position.z);
+            obs.Add(entry);
+        }
+
+
+
+
+
+
+
+
+
+
+        foreach (Character element in characters)           //分隊伍
+        {
+            if (element.team == now.team)
+            {
+                float[] entry = new float[2];
+                entry[0] = element.pos.x;
+                entry[1] = element.pos.z;
+                partner.Add(entry);
+            }
+            else
+            {
+                float[] entry = new float[2];
+                entry[0] = element.pos.x;
+                entry[1] = element.pos.z;
+                enemy.Add(entry);
+            }
+
+
+
+        }
+
+        mCount.Add(now.moveDis);                    //此角色的可移動步數                           
+
+        float[] temp = new float[2];                //此角色的位置          
+
+        temp[0] = now.pos.x;
+        temp[1] = now.pos.z;
+
+        canMove.Add(temp);
+
+        int canMovecount = 0;
+
+        while (canMove.Count > canMovecount)
+        {
+            float move = mCount[canMovecount];
+
+            if (move == 0)
+            {
+                canMovecount++;
+                continue;
+            }
+
+            //上
+            //Debug.Log("上");
+            float duplicateflag = 0;
+            float[] nowchecking = new float[2];
+            nowchecking[0] = canMove[canMovecount][0];
+            nowchecking[1] = canMove[canMovecount][1] + 10;
+
+            //檢查是否有敵人
+            foreach (float[] element in enemy)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有隊友
+            foreach (float[] element in partner)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有重複
+            foreach (float[] element in canMove)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有障礙
+            foreach (float[] element in obs)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+
+
+
+
+
+            if (duplicateflag == 0)
+            {
+                //Debug.Log("+上");
+                canMove.Add(nowchecking);
+                //Debug.Log("把nowchecking加進去囉" + nowchecking[0] + "   " + nowchecking[1]);
+                mCount.Add(move - 10);
+                //Debug.Log("canMove上" + canMove[1][0] + "   " + canMove[1][1]);
+            }
+
+
+            //下
+            //Debug.Log("下");
+            duplicateflag = 0;
+            nowchecking = new float[2];
+            nowchecking[0] = canMove[canMovecount][0];
+            nowchecking[1] = canMove[canMovecount][1] - 10;
+            //Debug.Log("canMove下" + canMove[1][0] + "   " + canMove[1][1]);
+
+            //Debug.Log("X:"+canMove[1][0] + "Z:"+canMove[1][1]);
+
+            //檢查是否有敵人
+            foreach (float[] element in enemy)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有隊友
+            foreach (float[] element in partner)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有重複
+            foreach (float[] element in canMove)
+            {
+                //Debug.Log("x:"+element[0] +"z:"+ element[1]);
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    //Debug.Log("移動重複");
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有障礙
+            foreach (float[] element in obs)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+
+            if (duplicateflag == 0)
+            {
+                //Debug.Log("+下");
+                canMove.Add(nowchecking);
+
+                mCount.Add(move - 10);
+                //Debug.Log("成功存取下");
+            }
+
+            //左
+            //Debug.Log("左");
+            duplicateflag = 0;
+            nowchecking = new float[2];
+            nowchecking[0] = canMove[canMovecount][0] - 10;
+            nowchecking[1] = canMove[canMovecount][1];
+
+            //檢查是否有敵人
+            foreach (float[] element in enemy)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有隊友
+            foreach (float[] element in partner)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有重複
+            foreach (float[] element in canMove)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有障礙
+            foreach (float[] element in obs)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+
+            if (duplicateflag == 0)
+            {
+                //Debug.Log("+左");
+                canMove.Add(nowchecking);
+                mCount.Add(move - 10);
+            }
+
+            //右
+            //Debug.Log("右");
+            duplicateflag = 0;
+            nowchecking = new float[2];
+            nowchecking[0] = canMove[canMovecount][0] + 10;
+            nowchecking[1] = canMove[canMovecount][1];
+
+            //檢查是否有敵人
+            foreach (float[] element in enemy)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有隊友
+            foreach (float[] element in partner)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有重複
+            foreach (float[] element in canMove)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+            //檢查是否有障礙
+            foreach (float[] element in obs)
+            {
+                if (element[0] == nowchecking[0] && element[1] == nowchecking[1])
+                {
+                    duplicateflag = 1;
+                    break;
+                }
+            }
+
+            if (duplicateflag == 0)
+            {
+                //Debug.Log("+右");
+                canMove.Add(nowchecking);
+                mCount.Add(move - 10);
+            }
+
+
+            canMovecount++;
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
 }
