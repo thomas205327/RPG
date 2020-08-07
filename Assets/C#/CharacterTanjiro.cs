@@ -137,6 +137,61 @@ public class CharacterTanjiro : Character
         }
     }
 
+    override
+    public void skillDisplay()
+    {
+        clearDisplay();
+        GameObject[] planes;
+        planes = GameObject.FindGameObjectsWithTag("MovePlane");
+        //GameObject redPlanes[8];
+
+        int i;
+        for (i = 0; i < planes.Length; i++)
+        {
+            if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x - 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z))
+            {
+                planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                //redPlanes[0] = planes[i];
+            }
+            else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x - 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z + 10))
+            {
+                planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+            }
+            else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x - 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z - 10))
+            {
+                planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+            }
+            else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z - 10))
+            {
+                planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+            }
+            else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z + 10))
+            {
+                planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+            }
+            else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x + 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z + 10))
+            {
+                planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+            }
+            else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x + 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z))
+            {
+                planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+            }
+            else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x + 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z - 10))
+            {
+                planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+            }
+        }
+
+    }
     void OnMouseDown()
     {
         if (plane.GetComponent<MeshRenderer>().material.color == Color.red &&

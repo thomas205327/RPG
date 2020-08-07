@@ -462,6 +462,11 @@ public abstract class Character : MonoBehaviour
         canvasController.Instance.menuShow();
     }
 
+    public virtual void skillDisplay()
+    {
+
+    }
+
     public virtual void automove()
     {
 
