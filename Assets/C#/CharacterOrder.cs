@@ -256,6 +256,10 @@ public class CharacterOrder : MonoBehaviour
                     break;
                 }
             }
+            if(nowchecking[0]>=-40&& nowchecking[0]<=170&& nowchecking[1]>=-40&& nowchecking[1] <= 40)
+            {
+                duplicateflag = 1;
+            }
 
 
 
@@ -319,7 +323,10 @@ public class CharacterOrder : MonoBehaviour
                     break;
                 }
             }
-
+            if (nowchecking[0] >= -40 && nowchecking[0] <= 170 && nowchecking[1] >= -40 && nowchecking[1] <= 40)
+            {
+                duplicateflag = 1;
+            }
             if (duplicateflag == 0)
             {
                 //Debug.Log("+下");
@@ -372,7 +379,10 @@ public class CharacterOrder : MonoBehaviour
                     break;
                 }
             }
-
+            if (nowchecking[0] >= -40 && nowchecking[0] <= 170 && nowchecking[1] >= -40 && nowchecking[1] <= 40)
+            {
+                duplicateflag = 1;
+            }
             if (duplicateflag == 0)
             {
                 //Debug.Log("+左");
@@ -423,7 +433,10 @@ public class CharacterOrder : MonoBehaviour
                     break;
                 }
             }
-
+            if (nowchecking[0] >= -40 && nowchecking[0] <= 170 && nowchecking[1] >= -40 && nowchecking[1] <= 40)
+            {
+                duplicateflag = 1;
+            }
             if (duplicateflag == 0)
             {
                 //Debug.Log("+右");
