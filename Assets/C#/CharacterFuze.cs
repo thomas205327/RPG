@@ -30,6 +30,8 @@ public class CharacterFuze : Character
         RES = 10;
         team = 0;
         GetComponent<Character>().damageFloatUp = GameObject.Find("damage");
+
+        skillSP1 = 25;
     }
 
     // Start is called before the first frame update

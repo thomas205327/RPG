@@ -30,6 +30,8 @@ public class CharacterTanjiro : Character
         RES = 0;
         team = 1;
         GetComponent<Character>().damageFloatUp = GameObject.Find("damage");
+
+        skillSP1 = 25;
     }
 
     // Start is called before the first frame update
@@ -192,6 +194,20 @@ public class CharacterTanjiro : Character
         }
 
     }
+
+    override
+    public void skillAttack()
+    {
+        int i;
+        for (i = 0; i < GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters.Count; i++)
+        {
+            if (GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[i].plane.GetComponent<MeshRenderer>().material.color == Color.red)
+            {
+                attack(GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[i]);
+            }
+        }
+    }
+
     void OnMouseDown()
     {
         if (plane.GetComponent<MeshRenderer>().material.color == Color.red &&

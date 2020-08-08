@@ -30,6 +30,8 @@ public class CharacterYuzio : Character
         RES = 0;
         team = 0;
         GetComponent<Character>().damageFloatUp = GameObject.Find("damage");
+
+        skillSP1 = 25;
     }
 
     // Start is called before the first frame update
@@ -135,6 +137,77 @@ public class CharacterYuzio : Character
 
                 break;
         }
+    }
+
+    override
+    public void skillDisplay()
+    {
+        clearDisplay();
+        GameObject[] planes;
+        planes = GameObject.FindGameObjectsWithTag("MovePlane");
+        //GameObject redPlanes[8];
+
+        int i;
+        for (i = 0; i < planes.Length; i++)
+        {
+            if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x - 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z))
+            {
+                planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                //redPlanes[0] = planes[i];
+            }
+            else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x - 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z + 10))
+            {
+                planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+            }
+            else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x - 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z - 10))
+            {
+                planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+            }
+            else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z - 10))
+            {
+                planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+            }
+            else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z + 10))
+            {
+                planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+            }
+            else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x + 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z + 10))
+            {
+                planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+            }
+            else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x + 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z))
+            {
+                planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+            }
+            else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x + 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z - 10))
+            {
+                planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+            }
+        }
+
+    }
+
+    override
+    public void skillAttack()
+    {
+        int i;
+        for (i = 0; i < GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters.Count; i++)
+        {
+            if (GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[i].plane.GetComponent<MeshRenderer>().material.color == Color.red)
+            {
+                attack(GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[i]);
+            }
+        }
+        sp = sp - skillSP1;
+        canvasController.Instance.sp.GetComponent<Text>().text = sp + "/" + spMax;
     }
 
     void OnMouseDown()

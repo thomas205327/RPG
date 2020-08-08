@@ -24,6 +24,8 @@ public class canvasController : MonoBehaviour
     public Image enemyImage;
     public static canvasController Instance;
     public Text text;
+    public GameObject skillYes;
+    public GameObject skillNo;
 
     // Start is called before the first frame update
 
@@ -36,7 +38,10 @@ public class canvasController : MonoBehaviour
         item.GetComponent<Button>().onClick.AddListener(itemOnclick);
         end.GetComponent<Button>().onClick.AddListener(endOnclick);
         backToChar.GetComponent<Button>().onClick.AddListener(backToCharOnclick);
-        
+
+        skillYes.GetComponent<Button>().onClick.AddListener(useSkill);
+        skillNo.GetComponent<Button>().onClick.AddListener(backToChoice);
+
     }
 
     void Awake()
@@ -90,8 +95,11 @@ public class canvasController : MonoBehaviour
     {
         //Debug.Log("技能");
         Character Obj1 = characterOrder.characters[0];
-        GameObject Order = GameObject.Find("CharacterOrder");
-        Order.GetComponent<CharacterOrder>().movingdis();
+        Obj1.skillDisplay();                                        //顯示技能可攻擊範圍
+
+        menuHide();
+        skillYes.SetActive(true);
+        skillNo.SetActive(true);
     }
 
     public void itemOnclick()
@@ -141,5 +149,25 @@ public class canvasController : MonoBehaviour
 
         GameObject.Find("Main Camera").GetComponent<MainCamera>().CameraReturn();
         hideReturn();
+    }
+
+    public void useSkill()
+    {
+        Character Obj1 = characterOrder.characters[0];
+        Obj1.skillAttack();
+
+        backToChoice();
+        skill.GetComponent<Button>().interactable = false;
+        attack.GetComponent<Button>().interactable = false;
+    }
+
+    public void backToChoice()
+    {
+        Character Obj1 = characterOrder.characters[0];
+
+        menuShow();
+        skillYes.SetActive(false);
+        skillNo.SetActive(false);
+        Obj1.clearDisplay();
     }
 }
