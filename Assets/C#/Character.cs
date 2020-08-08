@@ -174,7 +174,7 @@ public abstract class Character : MonoBehaviour
                 }
             }
 
-            if (nowchecking[0] >= -40 && nowchecking[0] <= 170 && nowchecking[1] >= -40 && nowchecking[1] <= 40)
+            if (nowchecking[0] < -40 || nowchecking[0] > 170 || nowchecking[1] < -40 || nowchecking[1] > 40)
             {
                 duplicateflag = 1;
             }
@@ -239,7 +239,7 @@ public abstract class Character : MonoBehaviour
                     break;
                 }
             }
-            if (nowchecking[0] >= -40 && nowchecking[0] <= 170 && nowchecking[1] >= -40 && nowchecking[1] <= 40)
+            if (nowchecking[0] < -40 || nowchecking[0] > 170 || nowchecking[1] < -40 || nowchecking[1] > 40)
             {
                 duplicateflag = 1;
             }
@@ -295,7 +295,7 @@ public abstract class Character : MonoBehaviour
                     break;
                 }
             }
-            if (nowchecking[0] >= -40 && nowchecking[0] <= 170 && nowchecking[1] >= -40 && nowchecking[1] <= 40)
+            if (nowchecking[0] < -40 || nowchecking[0] > 170 || nowchecking[1] < -40 || nowchecking[1] > 40)
             {
                 duplicateflag = 1;
             }
@@ -349,7 +349,7 @@ public abstract class Character : MonoBehaviour
                     break;
                 }
             }
-            if (nowchecking[0] >= -40 && nowchecking[0] <= 170 && nowchecking[1] >= -40 && nowchecking[1] <= 40)
+            if (nowchecking[0] < -40 || nowchecking[0] > 170 || nowchecking[1] < -40 || nowchecking[1] > 40)
             {
                 duplicateflag = 1;
             }
@@ -609,7 +609,7 @@ public abstract class Character : MonoBehaviour
                     break;
                 }
             }
-            if (nowchecking[0] >= -40 && nowchecking[0] <= 170 && nowchecking[1] >= -40 && nowchecking[1] <= 40)
+            if (nowchecking[0] < -40 || nowchecking[0] > 170 || nowchecking[1] < -40 || nowchecking[1] > 40)
             {
                 duplicateflag = 1;
             }
@@ -676,7 +676,7 @@ public abstract class Character : MonoBehaviour
                     break;
                 }
             }
-            if (nowchecking[0] >= -40 && nowchecking[0] <= 170 && nowchecking[1] >= -40 && nowchecking[1] <= 40)
+            if (nowchecking[0] < -40 || nowchecking[0] > 170 || nowchecking[1] < -40 || nowchecking[1] > 40)
             {
                 duplicateflag = 1;
             }
@@ -732,7 +732,7 @@ public abstract class Character : MonoBehaviour
                     break;
                 }
             }
-            if (nowchecking[0] >= -40 && nowchecking[0] <= 170 && nowchecking[1] >= -40 && nowchecking[1] <= 40)
+            if (nowchecking[0] < -40 || nowchecking[0] > 170 || nowchecking[1] < -40 || nowchecking[1] > 40)
             {
                 duplicateflag = 1;
             }
@@ -786,7 +786,7 @@ public abstract class Character : MonoBehaviour
                     break;
                 }
             }
-            if (nowchecking[0] >= -40 && nowchecking[0] <= 170 && nowchecking[1] >= -40 && nowchecking[1] <= 40)
+            if (nowchecking[0] < -40 || nowchecking[0] > 170 || nowchecking[1] < -40 || nowchecking[1] > 40)
             {
                 duplicateflag = 1;
             }
