@@ -108,7 +108,7 @@ public class CharacterTanjiro : Character
                     //Debug.Log("z要減少");
                     if (pos.z <= moveToZ)
                     {
-                        moveLock = 0;
+                        moveLock = 5;
                         clearDisplay();                 //移動完清除藍色地板
                         //GameObject.Find("Canvas").GetComponent<canvasController>().move.GetComponent<Button>().interactable = false;
                         break;
@@ -120,7 +120,7 @@ public class CharacterTanjiro : Character
                 {
                     if (pos.z >= moveToZ)
                     {
-                        moveLock = 0;
+                        moveLock = 5;
                         clearDisplay();                 //移動完清除藍色地板
                         //GameObject.Find("Canvas").GetComponent<canvasController>().move.GetComponent<Button>().interactable = false;
                         break;

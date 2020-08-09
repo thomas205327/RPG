@@ -977,8 +977,7 @@ public abstract class Character : MonoBehaviour
                 {
 
                     now.attack(e);
-                    GameObject ending = GameObject.Find("Canvas");
-                    ending.GetComponent<canvasController>().endOnclick();
+                    Invoke("enemyEnd", 2f);
 
                 }
             }
@@ -1017,20 +1016,17 @@ public abstract class Character : MonoBehaviour
             {
                 //Debug.Log(e[0]+","+ e[1]);
             }
-
-
-
-
             now.move(nearest[0], nearest[1]);
-            GameObject ending = GameObject.Find("Canvas");
-            //Invoke("print", 2f);
-            ending.GetComponent<canvasController>().endOnclick();
-
-
-
-
+            Invoke("enemyEnd", 2f);
         }
     }
+
+    public void enemyEnd()
+    {
+        GameObject ending = GameObject.Find("Canvas");
+        ending.GetComponent<canvasController>().endOnclick();
+    }
+
     private void OnMouseEnter()
     {
         if (plane.GetComponent<MeshRenderer>().material.color == Color.red &&

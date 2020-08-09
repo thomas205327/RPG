@@ -108,7 +108,7 @@ public class CharacterMidoriya : Character
                     //Debug.Log("z要減少");
                     if (pos.z <= moveToZ)
                     {
-                        moveLock = 0;
+                        moveLock = 5;
                         clearDisplay();                 //移動完清除藍色地板
                         break;
                     }
@@ -119,7 +119,7 @@ public class CharacterMidoriya : Character
                 {
                     if (pos.z >= moveToZ)
                     {
-                        moveLock = 0;
+                        moveLock = 5;
                         clearDisplay();                 //移動完清除藍色地板
                         break;
                     }
@@ -132,7 +132,7 @@ public class CharacterMidoriya : Character
                 planeSet();
                 GameObject.Find("Main Camera").GetComponent<MainCamera>().CameraReturn();
                 moveLock = 0;
-
+                
                 break;
         }
     }

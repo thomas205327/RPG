@@ -108,7 +108,7 @@ public class CharacterOrder : MonoBehaviour
         if (characters[0].team == 1)
         {
             canvasController.Instance.menuHide();
-            Invoke("movingdis", 2f);
+            Invoke("autoMove", 2f);
         }
         else
         {
@@ -120,6 +120,10 @@ public class CharacterOrder : MonoBehaviour
         }
     }
 
+    public void autoMove()
+    {
+        characters[0].automove();
+    }
 
     public void planeCharacterChange()
     {
