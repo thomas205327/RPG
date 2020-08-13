@@ -201,11 +201,25 @@ public class CharacterYuzio : Character
         int i;
         for (i = 0; i < GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters.Count; i++)
         {
-            if (GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[i].plane.GetComponent<MeshRenderer>().material.color == Color.red)
+            if (GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[i].plane.GetComponent<MeshRenderer>().material.color == Color.red && GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[i].team == 1)
             {
-                attack(GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[i]);
+                Character Obj1 = GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[i];
+                Obj1.hp = Obj1.hp - (STR - Obj1.DEF);
+                damageFloatUp.GetComponent<DamageFloatUp>().beAttack(Obj1, (STR - Obj1.DEF));
+
+                if (Obj1.hp <= 0)
+                {
+                    GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters.Remove(Obj1);
+                    Obj1.gameObject.SetActive(false);
+                }
+
+                GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().checkEnd();
             }
         }
+        clearDisplay();
+        GameObject.Find("Canvas").GetComponent<canvasController>().attack.GetComponent<Button>().interactable = false;
+        GameObject.Find("Canvas").GetComponent<canvasController>().skill.GetComponent<Button>().interactable = false;
+
         sp = sp - skillSP1;
         canvasController.Instance.sp.GetComponent<Text>().text = sp + "/" + spMax;
     }

@@ -27,6 +27,7 @@ public abstract class Character : MonoBehaviour
     public GameObject damageFloatUp;
     public int team;                        //隊伍
     public int skillSP1;
+    public int skillDirection = 0;
 
 
     public virtual void planeSet()
@@ -1029,18 +1030,14 @@ public abstract class Character : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (plane.GetComponent<MeshRenderer>().material.color == Color.red &&
-            GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[0] != this)
-        {
-            canvasController.Instance.enemyName.GetComponent<Text>().text = characterName;
-            canvasController.Instance.enemyHp.GetComponent<Text>().text = hp + "/" + hpMax;
-            canvasController.Instance.enemySp.GetComponent<Text>().text = sp + "/" + spMax;
-            canvasController.Instance.enemyImage.GetComponent<Image>().sprite = Resources.Load<Sprite>(image);
-            canvasController.Instance.enemyName.SetActive(true);
-            canvasController.Instance.enemyHp.SetActive(true);
-            canvasController.Instance.enemySp.SetActive(true);
-            canvasController.Instance.enemyImage.enabled = true;
-        }
+        canvasController.Instance.enemyName.GetComponent<Text>().text = characterName;
+        canvasController.Instance.enemyHp.GetComponent<Text>().text = hp + "/" + hpMax;
+        canvasController.Instance.enemySp.GetComponent<Text>().text = sp + "/" + spMax;
+        canvasController.Instance.enemyImage.GetComponent<Image>().sprite = Resources.Load<Sprite>(image);
+        canvasController.Instance.enemyName.SetActive(true);
+        canvasController.Instance.enemyHp.SetActive(true);
+        canvasController.Instance.enemySp.SetActive(true);
+        canvasController.Instance.enemyImage.enabled = true;
     }
 
     private void OnMouseExit()

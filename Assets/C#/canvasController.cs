@@ -122,13 +122,13 @@ public class canvasController : MonoBehaviour
         attack.SetActive(false);
         skill.SetActive(false);
         item.SetActive(false);
-        image.enabled = false;
+        //image.enabled = false;
         end.SetActive(false);
-        characterName.SetActive(false);
-        hp.SetActive(false);
-        sp.SetActive(false);
+        //characterName.SetActive(false);
+        //hp.SetActive(false);
+        //sp.SetActive(false);
         ////Debug.Log(Resources.Load<Sprite>(characterOrder.characters[0].image));
-        image.GetComponent<Image>().sprite = Resources.Load<Sprite>(characterOrder.characters[0].image);
+        //image.GetComponent<Image>().sprite = Resources.Load<Sprite>(characterOrder.characters[0].image);
 
     }
 
@@ -164,6 +164,7 @@ public class canvasController : MonoBehaviour
     public void backToChoice()
     {
         Character Obj1 = characterOrder.characters[0];
+        Obj1.skillDirection = 0;
 
         menuShow();
         skillYes.SetActive(false);

@@ -55,7 +55,193 @@ public class CharacterFuze : Character
     // Update is called once per frame
     void Update()
     {
-        switch(moveLock)
+        if (skillDirection == 1)
+        {
+            if ((Camera.main.ScreenToViewportPoint(Input.mousePosition).x + Camera.main.ScreenToViewportPoint(Input.mousePosition).y) - 1 > 0
+                && (Camera.main.ScreenToViewportPoint(Input.mousePosition).x - Camera.main.ScreenToViewportPoint(Input.mousePosition).y) < 0)
+            {
+                clearDisplay();
+                GameObject[] planes;
+                planes = GameObject.FindGameObjectsWithTag("MovePlane");
+                //GameObject redPlanes[8];
+
+                int i;
+                for (i = 0; i < planes.Length; i++)
+                {
+                    if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z + 10))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                        //redPlanes[0] = planes[i];
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x - 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z + 10))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x + 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z + 10))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z + 20))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x - 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z + 20))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x + 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z + 20))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                }
+            }
+            else if ((Camera.main.ScreenToViewportPoint(Input.mousePosition).x + Camera.main.ScreenToViewportPoint(Input.mousePosition).y) - 1 > 0
+                && (Camera.main.ScreenToViewportPoint(Input.mousePosition).x - Camera.main.ScreenToViewportPoint(Input.mousePosition).y) > 0)
+            {
+                clearDisplay();
+                GameObject[] planes;
+                planes = GameObject.FindGameObjectsWithTag("MovePlane");
+                //GameObject redPlanes[8];
+
+                int i;
+                for (i = 0; i < planes.Length; i++)
+                {
+                    if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x + 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                        //redPlanes[0] = planes[i];
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x + 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x + 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z + 10))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x + 20) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z + 10))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x + 20) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z - 10))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x + 20) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z - 10))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                }
+            }
+            else if ((Camera.main.ScreenToViewportPoint(Input.mousePosition).x + Camera.main.ScreenToViewportPoint(Input.mousePosition).y) - 1 < 0
+                && (Camera.main.ScreenToViewportPoint(Input.mousePosition).x - Camera.main.ScreenToViewportPoint(Input.mousePosition).y) < 0)
+            {
+                clearDisplay();
+                GameObject[] planes;
+                planes = GameObject.FindGameObjectsWithTag("MovePlane");
+                //GameObject redPlanes[8];
+
+                int i;
+                for (i = 0; i < planes.Length; i++)
+                {
+                    if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x -10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z + 10))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                        //redPlanes[0] = planes[i];
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x - 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z - 10))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x - 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x - 20) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x - 20) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z - 10))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x - 20) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z + 10))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                }
+            }
+            else if ((Camera.main.ScreenToViewportPoint(Input.mousePosition).x + Camera.main.ScreenToViewportPoint(Input.mousePosition).y) - 1 < 0
+                && (Camera.main.ScreenToViewportPoint(Input.mousePosition).x - Camera.main.ScreenToViewportPoint(Input.mousePosition).y) > 0)
+            {
+                clearDisplay();
+                GameObject[] planes;
+                planes = GameObject.FindGameObjectsWithTag("MovePlane");
+                //GameObject redPlanes[8];
+
+                int i;
+                for (i = 0; i < planes.Length; i++)
+                {
+                    if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z - 10))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                        //redPlanes[0] = planes[i];
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x - 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z - 10))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x + 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z - 10))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z - 20))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x - 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z - 20))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                    else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x + 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z - 20))
+                    {
+                        planes[i].GetComponent<MeshRenderer>().material.color = Color.red;
+                        planes[i].GetComponent<CanMovePlane>().Obj1 = this;
+                    }
+                }
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("停止偵測");
+            skillDirection = 0;
+        }
+
+        switch (moveLock)
         {
             case 1://轉向
                 transform.Rotate(0, 3, 0);
@@ -138,6 +324,41 @@ public class CharacterFuze : Character
 
                 break;
         }
+    }
+
+    override
+    public void skillDisplay()
+    {
+        skillDirection = 1;
+    }
+
+    override
+    public void skillAttack()
+    {
+        int i;
+        for (i = 0; i < GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters.Count; i++)
+        {
+            if (GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[i].plane.GetComponent<MeshRenderer>().material.color == Color.red && GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[i].team == 1)
+            {
+                Character Obj1 = GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters[i];
+                Obj1.hp = Obj1.hp - (STR - Obj1.DEF);
+                damageFloatUp.GetComponent<DamageFloatUp>().beAttack(Obj1, (STR - Obj1.DEF));
+
+                if (Obj1.hp <= 0)
+                {
+                    GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().characters.Remove(Obj1);
+                    Obj1.gameObject.SetActive(false);
+                }
+
+                GameObject.Find("CharacterOrder").GetComponent<CharacterOrder>().checkEnd();
+            }
+        }
+        clearDisplay();
+        GameObject.Find("Canvas").GetComponent<canvasController>().attack.GetComponent<Button>().interactable = false;
+        GameObject.Find("Canvas").GetComponent<canvasController>().skill.GetComponent<Button>().interactable = false;
+
+        sp = sp - skillSP1;
+        canvasController.Instance.sp.GetComponent<Text>().text = sp + "/" + spMax;
     }
 
     void OnMouseDown()
