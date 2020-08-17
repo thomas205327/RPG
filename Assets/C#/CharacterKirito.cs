@@ -142,26 +142,16 @@ public class CharacterKirito : Character
 
         switch (moveLock)
         {
-            case 1://轉向
-                transform.Rotate(0, 3, 0);
-                rotate = rotate + 3;
-                if (rotate >= 90)
-                {
-                    moveLock = 2;
-                    rotate = 0;
-                    //Debug.Log(" x: "+pos.x +"  z:  "+ pos.z);
-                    //Debug.Log(" movex: " + moveToX + "   movez:  " + moveToZ);
-                }
-                break;
-            case 2://移動x
+            case 1://移動x
                 if (pos.x >= moveToX)
                 {
                     //Debug.Log("x要減少");
                     if (pos.x <= moveToX)
                     {
-                        moveLock = 3;
+                        moveLock = 2;
                         break;
                     }
+                    transform.rotation = Quaternion.Euler(0, -90, 0);
                     transform.position += new Vector3(-1, 0, 0);
                     pos.x = pos.x - 1;
                 }
@@ -169,25 +159,16 @@ public class CharacterKirito : Character
                 {
                     if (pos.x >= moveToX)
                     {
-                        moveLock = 3;
+                        moveLock = 2;
                         break;
                     }
                     //Debug.Log("x要增加");
+                    transform.rotation = Quaternion.Euler(0, 90, 0);
                     transform.position += new Vector3(1, 0, 0);
                     pos.x = pos.x + 1;
                 }
                 break;
-            case 3://轉向
-                transform.Rotate(0, 3, 0);
-                rotate = rotate + 3;
-                if (rotate >= 90)
-                {
-                    moveLock = 4;
-                    rotate = 0;
-                    //Debug.Log(" x: " + pos.x + "  z:  " + pos.z);
-                }
-                break;
-            case 4://移動z
+            case 2://移動z
                 if (pos.z >= moveToZ)
                 {
                     //Debug.Log("z要減少");
@@ -198,6 +179,7 @@ public class CharacterKirito : Character
                         //GameObject.Find("Canvas").GetComponent<canvasController>().move.GetComponent<Button>().interactable = false;
                         break;
                     }
+                    transform.rotation = Quaternion.Euler(0, 180, 0);
                     transform.position += new Vector3(0, 0, -1);
                     pos.z = pos.z - 1;
                 }
@@ -211,6 +193,7 @@ public class CharacterKirito : Character
                         break;
                     }
                     //Debug.Log("z要增加");
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
                     transform.position += new Vector3(0, 0, 1);
                     pos.z = pos.z + 1;
                 }
@@ -224,10 +207,36 @@ public class CharacterKirito : Character
         }
     }
 
+    
+
     override
     public void skillDisplay()
     {
         skillDirection = 1;
+
+        GameObject[] planes;
+        planes = GameObject.FindGameObjectsWithTag("MovePlane");
+
+        int i;
+        for (i = 0; i < planes.Length; i++)
+        {
+            if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x + 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z))
+            {
+                
+            }
+            else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x - 10) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z))
+            {
+
+            }
+            else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z + 10))
+            {
+
+            }
+            else if (Mathf.Round(planes[i].transform.position.x) == Mathf.Round(pos.x) && Mathf.Round(planes[i].transform.position.z) == Mathf.Round(pos.z - 10))
+            {
+
+            }
+        }
     }
 
     override

@@ -29,4 +29,9 @@ public class CanMovePlane : MonoBehaviour
             Obj1.move(pos.x, pos.z);
         }
     }
+
+    void OnMouseOver()
+    {
+
+    }
 }

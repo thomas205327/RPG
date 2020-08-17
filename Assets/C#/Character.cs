@@ -28,6 +28,8 @@ public abstract class Character : MonoBehaviour
     public int team;                        //隊伍
     public int skillSP1;
     public int skillDirection = 0;
+    int moveToX = 0;
+    int moveToZ = 0;
 
 
     public virtual void planeSet()
@@ -469,7 +471,11 @@ public abstract class Character : MonoBehaviour
 
     public virtual void move(float x, float z)
     {
-        
+        speed = 0.2f;
+        moveLock = 1;
+        moveToX = (int)x;
+        moveToZ = (int)z;
+        GameObject.Find("Canvas").GetComponent<canvasController>().move.GetComponent<Button>().interactable = false;
     }
 
     public virtual void menuShow()
@@ -1047,8 +1053,4 @@ public abstract class Character : MonoBehaviour
         canvasController.Instance.enemySp.SetActive(false);
         canvasController.Instance.enemyImage.enabled = false;
     }
-
-
-
-
 }

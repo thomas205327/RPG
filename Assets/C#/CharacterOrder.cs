@@ -11,12 +11,12 @@ public class CharacterOrder : MonoBehaviour
 
     void Awake()
     {
-        Instantiate(Resources.Load("Kirito"), new Vector3(170f, 1.5f, -10f), new Quaternion(0, 90, 0, 0));
-        Instantiate(Resources.Load("Fuze"), new Vector3(170f, 3.5f, 10f), new Quaternion(0, 90, 0, 0));
-        Instantiate(Resources.Load("Midoriya"), new Vector3(-40f, 3.5f, 0), new Quaternion(0, 90, 0, 0));
-        Instantiate(Resources.Load("Yuzio"), new Vector3(170f, 6f, 0), new Quaternion(0, 90, 0, 0));
-        Instantiate(Resources.Load("Bakugou"), new Vector3(-40f, 3.5f, 10f), new Quaternion(0, 90, 0, 0));
-        Instantiate(Resources.Load("Tanjiro"), new Vector3(-40f, 3.5f, -10f), new Quaternion(0, 90, 0, 0));
+        Instantiate(Resources.Load("Kirito"), new Vector3(170f, 1.5f, -10f), new Quaternion(0, 0, 0, 0));
+        Instantiate(Resources.Load("Fuze"), new Vector3(170f, 3.5f, 10f), new Quaternion(0, 0, 0, 0));
+        Instantiate(Resources.Load("Midoriya"), new Vector3(-40f, 3.5f, 0), new Quaternion(0, 0, 0, 0));
+        Instantiate(Resources.Load("Yuzio"), new Vector3(170f, 6f, 0), new Quaternion(0, 0, 0, 0));
+        Instantiate(Resources.Load("Bakugou"), new Vector3(-40f, 3.5f, 10f), new Quaternion(0, 0, 0, 0));
+        Instantiate(Resources.Load("Tanjiro"), new Vector3(-40f, 3.5f, -10f), new Quaternion(0, 0, 0, 0));
     }
 
     // Start is called before the first frame update
