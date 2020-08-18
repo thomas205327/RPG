@@ -170,5 +170,13 @@ public class canvasController : MonoBehaviour
         skillYes.SetActive(false);
         skillNo.SetActive(false);
         Obj1.clearDisplay();
+
+        int i;
+        GameObject[] skillPlanes;
+        skillPlanes = GameObject.FindGameObjectsWithTag("skillPlane");
+        for (i = 0; i < skillPlanes.Length; i++)
+        {
+            Destroy(skillPlanes[i]);
+        }
     }
 }

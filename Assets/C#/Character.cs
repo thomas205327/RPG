@@ -28,8 +28,8 @@ public abstract class Character : MonoBehaviour
     public int team;                        //隊伍
     public int skillSP1;
     public int skillDirection = 0;
-    int moveToX = 0;
-    int moveToZ = 0;
+    public int moveToX = 0;
+    public int moveToZ = 0;
 
 
     public virtual void planeSet()
@@ -1052,5 +1052,74 @@ public abstract class Character : MonoBehaviour
         canvasController.Instance.enemyHp.SetActive(false);
         canvasController.Instance.enemySp.SetActive(false);
         canvasController.Instance.enemyImage.enabled = false;
+    }
+
+    void Update()
+    {
+        switch (moveLock)
+        {
+            case 1://移動x
+                if (pos.x >= moveToX)
+                {
+                    //Debug.Log("x要減少");
+                    if (pos.x <= moveToX)
+                    {
+                        moveLock = 2;
+                        break;
+                    }
+                    transform.rotation = Quaternion.Euler(0, -90, 0);
+                    transform.position += new Vector3(-1, 0, 0);
+                    pos.x = pos.x - 1;
+                }
+                else
+                {
+                    if (pos.x >= moveToX)
+                    {
+                        moveLock = 2;
+                        break;
+                    }
+                    //Debug.Log("x要增加");
+                    transform.rotation = Quaternion.Euler(0, 90, 0);
+                    transform.position += new Vector3(1, 0, 0);
+                    pos.x = pos.x + 1;
+                }
+                break;
+            case 2://移動z
+                if (pos.z >= moveToZ)
+                {
+                    //Debug.Log("z要減少");
+                    if (pos.z <= moveToZ)
+                    {
+                        moveLock = 5;
+                        clearDisplay();                 //移動完清除藍色地板
+                        //GameObject.Find("Canvas").GetComponent<canvasController>().move.GetComponent<Button>().interactable = false;
+                        break;
+                    }
+                    transform.rotation = Quaternion.Euler(0, 180, 0);
+                    transform.position += new Vector3(0, 0, -1);
+                    pos.z = pos.z - 1;
+                }
+                else
+                {
+                    if (pos.z >= moveToZ)
+                    {
+                        moveLock = 5;
+                        clearDisplay();                 //移動完清除藍色地板
+                        //GameObject.Find("Canvas").GetComponent<canvasController>().move.GetComponent<Button>().interactable = false;
+                        break;
+                    }
+                    //Debug.Log("z要增加");
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                    transform.position += new Vector3(0, 0, 1);
+                    pos.z = pos.z + 1;
+                }
+                break;
+            case 5:
+                planeSet();
+                GameObject.Find("Main Camera").GetComponent<MainCamera>().CameraReturn();
+                moveLock = 0;
+
+                break;
+        }
     }
 }

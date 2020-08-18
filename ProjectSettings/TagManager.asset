@@ -8,6 +8,7 @@ TagManager:
   - menuButton
   - obstacle
   - order
+  - skillPlane
   layers:
   - Default
   - TransparentFX
